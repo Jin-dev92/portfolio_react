@@ -1,14 +1,16 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-import Header from "./components/header/Header";
-
+import {Layout} from "antd";
+import IconButton from "./components/common/IconButton";
 function App() {
-  return (
-    <div className="App">
-        <Header/>
-    </div>
-  );
+    const layoutStyle = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        background: `url(/images/wallpaper/wallpaperbetter.com_1920x1200.jpg)`
+    }
+    return (
+        <Layout style={layoutStyle}>
+            <IconButton src={'/images/icons/computer/computer.png'}></IconButton>
+        </Layout>
+    );
 }
 
 export default App;

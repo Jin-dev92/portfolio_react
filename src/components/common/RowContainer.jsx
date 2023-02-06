@@ -1,6 +1,12 @@
-const RowContainer = () => {
+const RowContainer = ({content}) => {
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'row',
+    }
     return (
-        <div></div>
+        <div style={containerStyle}>
+            {content}
+        </div>
     )
 }
 
