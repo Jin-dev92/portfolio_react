@@ -1,0 +1,28 @@
+{
+  "app_list": [
+    {
+      "name": "information",
+      "src": "/images/icons/folder/folder.png",
+      "position": {
+        "x": 25,
+        "y": 25
+      }
+    },
+    {
+      "name": "game",
+      "src": "/images/icons/pad/game-control.png",
+      "position": {
+        "x": 25,
+        "y": 75
+      }
+    },
+    {
+      "name": "test",
+      "src": "/images/icons/computer/computer.png",
+      "position": {
+        "x": 25,
+        "y": 125
+      }
+    }
+  ]
+}
