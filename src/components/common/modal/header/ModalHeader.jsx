@@ -1,4 +1,5 @@
 import ModalHeaderButton from "./button/ModalHeaderButton";
+import RowContainer from "../../layout/RowContainer";
 
 const ModalHeader = ({title}) => {
     const handleRedClick = () => {
@@ -12,11 +13,11 @@ const ModalHeader = ({title}) => {
     }
 
     return (
-        <div>
-            <ModalHeaderButton color={''}/>
-            <ModalHeaderButton color={''}/>
-            <ModalHeaderButton color={''}/>
-        </div>
+        <RowContainer>
+            <ModalHeaderButton color={''} clickFunction={handleRedClick}/>
+            <ModalHeaderButton color={''} clickFunction={handleYellowClick}/>
+            <ModalHeaderButton color={''} clickFunction={handleGreenClick}/>
+        </RowContainer>
     )
 }
 
