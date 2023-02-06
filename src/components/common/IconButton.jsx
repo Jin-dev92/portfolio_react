@@ -1,5 +1,6 @@
 import Draggable from "react-draggable";
-const IconButton = ({draggable = true, size = 100, src}) => {
+
+const IconButton = ({draggable = true, size = 100, src, position = {x: 10, y: 0}}) => {
     const imageStyle = {
         backgroundImage: `url(${src})`,
         backgroundSize: 'contain',
@@ -9,7 +10,7 @@ const IconButton = ({draggable = true, size = 100, src}) => {
         height: size,
     }
     return (
-        <Draggable scale={1} disabled={!draggable}>
+        <Draggable scale={1} disabled={!draggable} defaultPosition={position}>
             <div style={imageStyle}></div>
         </Draggable>
     )
