@@ -6,7 +6,7 @@ function App() {
     const layoutStyle = {
         width: window.innerWidth,
         height: window.innerHeight,
-        background: `url(/images/wallpaper/wallpaperbetter.com_1920x1200.jpg)`
+        background: `url(${appData?.app_bg})`
     }
 
 
@@ -16,7 +16,7 @@ function App() {
             {
                 appData.app_list.map((data, idx) => {
                     return (
-                        <IconButton src={data.src} position={data.position} key={`icon-button-${idx}`}/>
+                        <IconButton src={data.src} position={data.position} key={`icon-button-${idx}`} name={data.name}/>
                     )
                 })
             }
