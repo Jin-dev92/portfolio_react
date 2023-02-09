@@ -12,11 +12,23 @@ const ModalHeader = ({title}) => {
 
     }
 
+    const buttonWrapperStyle = {
+        // width: 8,
+        // height: 8
+        marginLeft: 4
+    }
     return (
         <RowContainer>
-            <ModalHeaderButton color={''} clickFunction={handleRedClick}/>
-            <ModalHeaderButton color={''} clickFunction={handleYellowClick}/>
-            <ModalHeaderButton color={''} clickFunction={handleGreenClick}/>
+            <div>
+                <ModalHeaderButton color={'#fc635c'} clickFunction={handleRedClick}/>
+            </div>
+            <div style={buttonWrapperStyle}>
+                <ModalHeaderButton color={'#fbba22'} clickFunction={handleYellowClick}/>
+            </div>
+            <div style={buttonWrapperStyle}>
+                <ModalHeaderButton color={'#2ace38'} clickFunction={handleGreenClick}/>
+
+            </div>
         </RowContainer>
     )
 }

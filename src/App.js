@@ -7,7 +7,7 @@ import React from "react";
 
 function App() {
     const [open, setOpen] = React.useState(false)
-    const contents = React.useRef(<React.Fragment></React.Fragment>)
+    const contents = React.useRef(<></>)
     const setContents = (value) => {
         contents.current = value
     }
