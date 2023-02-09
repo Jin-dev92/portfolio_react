@@ -10,7 +10,14 @@ const NumberPuzzle = () => {
         justifyContent: 'space-around',
         width: 320,
         height: 320,
-        margin : '0 auto'
+        margin: '0 auto'
+    }
+    const labelStyle = {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+        color:'red',
+        marginTop: 8,
     }
     const [numberState, setNumberState] = React.useState(() => {
             let ar = [1, 2, 3, 4, 5, 6, 7, 8, null]
@@ -24,20 +31,23 @@ const NumberPuzzle = () => {
     )
     const [count, setCount] = React.useState(0)
     return (
-        <div style={puzzleContainerStyle}>
-            {
-                numberState.map((numberRow) => {
-                    return (
-                        numberRow.map((number, idx) =>
-                            <NumberItem number={number} numberState={numberState}
-                                        key={'numberItem_' + idx}
-                                        setCount={setCount}
-                                        count={count}
-                                        setNumberState={setNumberState}/>
+        <div>
+            <div style={puzzleContainerStyle}>
+                {
+                    numberState.map((numberRow) => {
+                        return (
+                            numberRow.map((number, idx) =>
+                                <NumberItem number={number} numberState={numberState}
+                                            key={'numberItem_' + idx}
+                                            setCount={setCount}
+                                            count={count}
+                                            setNumberState={setNumberState}/>
+                            )
                         )
-                    )
-                })
-            }
+                    })
+                }
+            </div>
+            <div style={labelStyle}>{count}</div>
         </div>
     )
 }
