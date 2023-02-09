@@ -11,17 +11,15 @@ const CommonModal = ({contents, open, setOpen}) => {
 
     return (
         <Modal
-            title={<ModalHeader title={title}/>}
+            // title={<ModalHeader/>}
+            title={title}
             open={open}
-            // onOk={handleOk}
             onCancel={handleCancel}
             // okButtonProps={{type: "ghost"}}
             // cancelButtonProps={{}}
-            closable={false}
-            // closeIcon={null}
-            footer={null}
-
-        >
+            // closable={false}
+            width={1000}
+            footer={null}>
             {component}
         </Modal>
     )
