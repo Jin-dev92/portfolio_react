@@ -1,0 +1,32 @@
+{
+  "app_bg": "/images/wallpaper/wallpaperbetter.com_1920x1200.jpg",
+  "app_list": [
+    {
+      "id": 1,
+      "name": "About me",
+      "src": "/images/icons/folder/folder.png",
+      "position": {
+        "x": 25,
+        "y": 25
+      }
+    },
+    {
+      "id": 2,
+      "name": "Game",
+      "src": "/images/icons/pad/game-control.png",
+      "position": {
+        "x": 25,
+        "y": 75
+      }
+    },
+    {
+      "id": 3,
+      "name": "Data Chart",
+      "src": "/images/icons/computer/computer.png",
+      "position": {
+        "x": 25,
+        "y": 125
+      }
+    }
+  ]
+}
