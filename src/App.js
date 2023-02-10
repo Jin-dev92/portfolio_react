@@ -3,9 +3,11 @@ import IconButton from "./components/common/button/IconButton";
 import appData from './mock/app_data.json'
 import CommonModal from "./components/common/modal/CommonModal";
 import React from "react";
+import axios from "axios";
 
 
 function App() {
+    // axios.defaults.withCredentials = true
     const [open, setOpen] = React.useState(false)
     const contents = React.useRef(<></>)
     const setContents = (value) => {
