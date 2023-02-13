@@ -37,7 +37,7 @@ const DataChart = () => {
             const {resultCode} = header
             if (resultCode === ApiResultCode.NORMAL_SERVICE) {
                 setData(
-                    response.body.items.item.reduce((newObject, object) => {
+                    response.body.items.item.reduce((newObject, object, idx) => {
                         if (Object.values(WeatherCategory).includes(object?.category)) {
                             newObject['weather'] = {
                                 ...newObject['weather'],
@@ -57,8 +57,9 @@ const DataChart = () => {
                             }
                         }
                         return newObject
-                    })
+                    }, {})
                 )
+
             }
         },
     })

@@ -3,6 +3,7 @@ import WeatherDescription from "./description/WeatherDescription";
 import PrecipitationDescription from "./description/PrecipitationDescription";
 
 const CardDescription = ({data, type}) => {
+    if(data === undefined) return null
     switch (type) {
         case 'weather':
             return (

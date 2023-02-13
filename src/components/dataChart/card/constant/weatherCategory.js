@@ -16,8 +16,21 @@ export const PrecipitationCategory = {
     PRECIPITATION_PER_HOUR: "PCP", // 강수량
     PRECIPITATION_FORM: "PTY",
     PRECIPITATION_RATE: "POP",
+    SNOWFALL_RATE: "SNO",
 }
 
+export const SkyDetail = {
+    SUNNY: "1",
+    CLOUDY: "3",
+    CLOUD: "4",
+}
+export const PtyDetail = {
+    NOTHING: "0",
+    RAIN: "1",
+    RAIN_AND_SNOW: "2",
+    SNOW: "3",
+    HEAVY_RAIN: "4",
+}
 //     POP	강수 확률	%
 //         PTY	강수 형태	코드값
 //     PCP	1시간 강수량	범주 (1 mm)
