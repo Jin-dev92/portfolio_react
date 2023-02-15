@@ -1,9 +1,9 @@
 import ModalHeaderButton from "./button/ModalHeaderButton";
 import RowContainer from "../../layout/RowContainer";
 
-const ModalHeader = ({title}) => {
+const ModalHeader = ({title, setOpen}) => {
     const handleRedClick = () => {
-
+        setOpen(false)
     }
     const handleYellowClick = () => {
 
@@ -13,9 +13,7 @@ const ModalHeader = ({title}) => {
     }
 
     const buttonWrapperStyle = {
-        // width: 8,
-        // height: 8
-        marginLeft: 4
+        marginLeft: 5
     }
     return (
         <RowContainer>
@@ -27,7 +25,6 @@ const ModalHeader = ({title}) => {
             </div>
             <div style={buttonWrapperStyle}>
                 <ModalHeaderButton color={'#2ace38'} clickFunction={handleGreenClick}/>
-
             </div>
         </RowContainer>
     )

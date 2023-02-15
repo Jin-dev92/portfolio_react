@@ -5,15 +5,30 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
+import {ConfigProvider, theme} from "antd";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            retry: false,
+            // suspense: true
+        }
+    },
+
+})
 root.render(
-    <QueryClientProvider client={queryClient}>
-        {/* devtools */}
-        <ReactQueryDevtools initialIsOpen={true}/>
-        <App/>
-    </QueryClientProvider>
+    <ConfigProvider
+        theme={{
+            algorithm: theme.darkAlgorithm,
+        }}
+    >
+        <QueryClientProvider client={queryClient}>
+            {/* devtools */}
+            <ReactQueryDevtools initialIsOpen={true}/>
+            <App/>
+        </QueryClientProvider>
+    </ConfigProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

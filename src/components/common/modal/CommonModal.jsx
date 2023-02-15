@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal} from "antd";
 import ModalHeader from "./header/ModalHeader";
-// import Draggable from "react-draggable";
+import Draggable from "react-draggable";
 
 const CommonModal = ({contents, open, setOpen}) => {
     const {title, component} = contents.current
@@ -11,13 +11,14 @@ const CommonModal = ({contents, open, setOpen}) => {
 
     return (
         <Modal
-            // title={<ModalHeader/>}
-            title={title}
+            title={<ModalHeader title={title} setOpen={setOpen}/>}
+            modalRender={(modal) => (
+                <Draggable children={modal}/>
+            )
+            }
             open={open}
             onCancel={handleCancel}
-            // okButtonProps={{type: "ghost"}}
-            // cancelButtonProps={{}}
-            // closable={false}
+            closable={false}
             width={1000}
             footer={null}>
             {component}

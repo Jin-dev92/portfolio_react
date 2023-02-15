@@ -26,7 +26,7 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
                 }
             case 3:
                 return {
-                    title: "DataChart",
+                    title: "Data API",
                     component: <DataChart/>,
                 }
             default:
