@@ -6,11 +6,14 @@ import {ApiResultCode} from "../../api/constant/apiResult";
 import LoadingCard from "./card/LoadingCard";
 import {PrecipitationCategory, WeatherCategory, WindCategory} from "./card/constant/weatherCategory";
 import {DataType} from "./card/constant/dataType";
+import LoadingIndicator from "../common/LoadingIndicator";
 
 const DataChart = () => {
     const releaseTime = ["0200", "0500", "0800", "1100", "1400", "1700", "2000", "2300"]
-    const timeAbsArray = releaseTime.map(time => Math.abs(parseInt(dayjs().clone().format("HH").concat("00")) - parseInt(time)))
-    const nearTimeIndex = timeAbsArray.findIndex(abs => abs === Math.min(...timeAbsArray))
+    const currentTime = dayjs().clone().format("HH").concat("00")
+    releaseTime.push(currentTime)
+    releaseTime.sort()
+    const nearTimeIndex = releaseTime.findIndex((time) => time === currentTime) - 1
     const location = {
         X: 60,
         Y: 127
@@ -63,8 +66,12 @@ const DataChart = () => {
             }
         },
     })
+
     return (
-        <LoadingCard loading={isLoading} data={data}/>
+        // <React.Suspense fallback={<LoadingIndicator/>}>
+        isLoading || !data ? <LoadingIndicator/> :
+            <LoadingCard loading={isLoading} data={data}/>
+        // </React.Suspense>
     )
 }
 

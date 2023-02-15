@@ -1,8 +1,14 @@
-import {Button} from "antd";
 
 const ModalHeaderButton = ({color, clickFunction}) => {
+    const buttonStyle = {
+        backgroundColor: color,
+        width: 15,
+        height: 15,
+        borderRadius:10,
+        cursor: "pointer",
+    }
     return (
-        <Button onClick={clickFunction} shape={"round"} ghost style={{backgroundColor: color}} size={"small"}></Button>
+        <div style={buttonStyle} onClick={clickFunction}></div>
     )
 }
 

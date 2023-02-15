@@ -19,23 +19,23 @@ function App() {
     }
 
     return (
-        <Layout style={layoutStyle}>
-            {
-                appData.app_list.map((data, idx) => {
-                    return (
-                        <IconButton src={data.src}
-                                    position={data.position}
-                                    key={`icon-button-${idx}`}
-                                    name={data.name}
-                                    id={data.id}
-                                    setOpen={setOpen}
-                                    setContents={setContents}
-                        />
-                    )
-                })
-            }
-            <CommonModal open={open} setOpen={setOpen} contents={contents}/>
-        </Layout>
+            <Layout style={layoutStyle}>
+                {
+                    appData.app_list.map((data, idx) => {
+                        return (
+                            <IconButton src={data.src}
+                                        position={data.position}
+                                        key={`icon-button-${idx}`}
+                                        name={data.name}
+                                        id={data.id}
+                                        setOpen={setOpen}
+                                        setContents={setContents}
+                            />
+                        )
+                    })
+                }
+                <CommonModal open={open} setOpen={setOpen} contents={contents}/>
+            </Layout>
     );
 }
 
