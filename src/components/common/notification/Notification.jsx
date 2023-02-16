@@ -11,9 +11,10 @@ const Notification = ({
                           type,
                           message,
                           description,
+                          href,
                           placement = NotificationPlacement.BOTTOM_RIGHT,
                           duration = 7,
-                          callback,
+                          // callback,
                       }) => {
     const [api, contextHolder] = notification.useNotification();
     React.useEffect(() => {
@@ -22,8 +23,7 @@ const Notification = ({
             api.open({
                 message: message,
                 description: description || `${duration}초 뒤 닫힙니다!`,
-                btn: <RedirectNotificationButton api={api} nKey={key} setIsOpen={setIsOpen}
-                                                 callback={callback}/>,
+                btn: <RedirectNotificationButton api={api} nKey={key} setIsOpen={setIsOpen} href={href}/>,
                 key: key,
                 placement: placement,
                 duration: duration,
@@ -33,7 +33,7 @@ const Notification = ({
                 }
             });
         }
-    }, [api, isOpen])
+    }, [api, description, duration, href, isOpen, message, placement, setIsOpen, type])
 
     return (
         <React.Fragment>
