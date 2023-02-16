@@ -2,6 +2,7 @@ import React from 'react';
 import {Anchor, Divider} from "antd";
 import Notification from "../common/notification/Notification";
 import {GithubOutlined} from "@ant-design/icons";
+import {NotificationType} from "../common/notification/constant";
 
 const About = () => {
     const indexFontStyle = {
@@ -20,6 +21,7 @@ const About = () => {
         currentAnchor.current = link
         setIsOpen(true)
     }
+
     return (
         <div style={innerTextStyle}>
             <Divider orientation={"left"} orientationMargin style={indexFontStyle}>간단 소개</Divider>
@@ -71,7 +73,12 @@ const About = () => {
                     },
                 ]}
             />
-            <Notification isOpen={isOpen} setIsOpen={setIsOpen} href={currentAnchor.current?.href}/>
+            <Notification isOpen={isOpen}
+                          setIsOpen={setIsOpen}
+                          href={currentAnchor.current?.href}
+                          type={NotificationType.INFO}
+                          message={'해당 페이지로 이동 하시겠습니까?'}
+                          callback={window.location.href = currentAnchor.current?.href}/>
         </div>
     )
 }
