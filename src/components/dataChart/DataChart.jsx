@@ -18,8 +18,6 @@ const DataChart = () => {
         X: 60,
         Y: 127
     }
-    console.log(process.env)
-    console.log(process.env.REACT_APP_SERVICE_KEY)
     const config = {
         params: {
             serviceKey: process.env.REACT_APP_SERVICE_KEY,
