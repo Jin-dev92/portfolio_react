@@ -120,9 +120,6 @@ const About = () => {
                           href={currentAnchor.current?.href}
                           type={NotificationType.INFO}
                           message={'해당 페이지로 이동 하시겠습니까?'}
-                // callback={(event)=> {
-                //     window.location.href = currentAnchor.current?.href
-                // }}
             />
         </div>
     )

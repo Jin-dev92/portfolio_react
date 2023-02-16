@@ -18,9 +18,11 @@ const DataChart = () => {
         X: 60,
         Y: 127
     }
+    console.log(process.env)
+    console.log(process.env.REACT_APP_SERVICE_KEY)
     const config = {
         params: {
-            serviceKey: "avP3IfTpxDK50GQaRfRJf5iZHTFbFLkQHRkYCmphmqGAMs/ToAKLbEdkn97qZzX4nd/2V5Tv/OwL+FVvR9Qw9g==",
+            serviceKey: process.env.REACT_APP_SERVICE_KEY,
             pageNo: 1,
             dataType: DataType.JSON,
             numOfRows: Object.keys(Object.assign(WeatherCategory, WindCategory, PrecipitationCategory)).length,
