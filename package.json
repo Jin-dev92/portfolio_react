@@ -26,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:deploy": "aws s3 sync ./build s3://portfolio-s3-ap-north-east-2 --profile=portfolio-s3",
-    "dev:invalidate": "aws cloudfront create-invalidation --profile=portfolio-s3 --distribution-id E1R13ZFSRYR190 --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico",
+    "dev:invalidate": "aws cloudfront create-invalidation --profile=portfolio-s3 --distribution-id E1R13ZFSRYR190 --paths /*",
     "deploy-all": "run-s dev:**"
   },
   "eslintConfig": {
