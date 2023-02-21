@@ -11,7 +11,7 @@ function App() {
     const setContents = (value) => {
         contents.current = value
     }
-
+    // console.log(process.env)
     const layoutStyle = {
         width: 1920,
         height: 1080,

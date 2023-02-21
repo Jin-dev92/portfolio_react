@@ -18,6 +18,7 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -25,6 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "dev:build": "react-scripts build",
     "dev:deploy": "aws s3 sync ./build s3://portfolio-s3-ap-north-east-2 --profile=portfolio-s3",
     "dev:invalidate": "aws cloudfront create-invalidation --profile=portfolio-s3 --distribution-id E1R13ZFSRYR190 --paths /*",
     "deploy-all": "run-s dev:**"
