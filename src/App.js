@@ -22,7 +22,7 @@ function App() {
             <Layout style={layoutStyle}>
                 {
                     appData.app_list.map((data, idx) => {
-                        return (
+                        return !data.disabled ? (
                             <IconButton src={data.src}
                                         position={data.position}
                                         key={`icon-button-${idx}`}
@@ -31,7 +31,7 @@ function App() {
                                         setOpen={setOpen}
                                         setContents={setContents}
                             />
-                        )
+                        ) : null
                     })
                 }
                 <CommonModal open={open} setOpen={setOpen} contents={contents}/>
