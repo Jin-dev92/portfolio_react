@@ -16,7 +16,7 @@ const ModalHeader = ({title, setOpen}) => {
         marginLeft: 5
     }
     return (
-        <Container>
+        <Container direction={'row'}>
             <div>
                 <ModalHeaderButton color={'#fc635c'} clickFunction={handleRedClick}/>
             </div>

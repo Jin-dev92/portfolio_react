@@ -3,7 +3,7 @@ import {Container} from "../common/layout/Container";
 
 const Chrome = () => {
     return (
-        <Container>
+        <Container direction={'row'} >
 
         </Container>
     )
