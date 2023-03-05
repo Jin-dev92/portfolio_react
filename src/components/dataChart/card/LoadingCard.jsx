@@ -14,7 +14,7 @@ const LoadingCard = ({loading, data}) => {
     }
 
     return (
-        <Container>
+        <Container direction={'row'}>
             <Card
                 hoverable
                 loading={loading}
