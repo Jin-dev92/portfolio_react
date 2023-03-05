@@ -1,10 +1,10 @@
 import React from 'react';
 import {Card} from "antd";
 import Meta from "antd/es/card/Meta";
-import RowContainer from "../../common/layout/RowContainer";
 import {PrecipitationImageSrc, WeatherImageSrc, WindImageSrc} from "./constant/imageSrc";
 import CardDescription from "./CardDescription";
 import {PtyDetail, SkyDetail} from "./constant/weatherCategory";
+import {Container} from "../../common/layout/Container";
 
 const LoadingCard = ({loading, data}) => {
     const cardStyle = {
@@ -14,7 +14,7 @@ const LoadingCard = ({loading, data}) => {
     }
 
     return (
-        <RowContainer>
+        <Container>
             <Card
                 hoverable
                 loading={loading}
@@ -42,7 +42,7 @@ const LoadingCard = ({loading, data}) => {
                 <Meta title="PRECIPITATION"
                       description={<CardDescription data={data?.precipitation} type={'precipitation'}/>}/>
             </Card>
-        </RowContainer>
+        </Container>
     )
 }
 

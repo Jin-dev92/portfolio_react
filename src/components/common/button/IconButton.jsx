@@ -5,6 +5,7 @@ import Game from "../../game/Game";
 import DataChart from "../../dataChart/DataChart";
 import Chrome from "../../chrome/Chrome";
 
+
 const IconButton = ({draggable = true, size = 120, src, position, name, id, setOpen, setContents}) => {
     const isDrag = React.useRef(false)
     const onDragStart = () => {
