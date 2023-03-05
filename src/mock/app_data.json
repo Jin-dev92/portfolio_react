@@ -27,6 +27,15 @@
         "x": 25,
         "y": 125
       }
+    },
+    {
+      "id": 4,
+      "name": "Chrome",
+      "src": "/images/icons/chrome.png",
+      "position": {
+        "x": 25,
+        "y": 175
+      }
     }
   ]
 }
