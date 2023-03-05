@@ -18,7 +18,9 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.6",
+    "sass": "^1.58.3",
+    "scss": "^0.2.4",
+    "styled-components": "^5.3.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

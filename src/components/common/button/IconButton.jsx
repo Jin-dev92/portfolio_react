@@ -29,6 +29,11 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
                     title: "Data API",
                     component: <DataChart/>,
                 }
+            case 4:
+                return {
+                    title: "Chrome",
+                    component: <DataChart/>,
+                }
             default:
                 return null
         }
@@ -60,6 +65,7 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
         width: size,
         textAlign: 'center',
         color: 'white',
+        marginBlockStart: '8px'
     }
     const wrapperStyle = {
         width: size,
