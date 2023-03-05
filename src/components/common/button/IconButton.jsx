@@ -3,6 +3,7 @@ import Draggable from "react-draggable";
 import About from "../../about/About";
 import Game from "../../game/Game";
 import DataChart from "../../dataChart/DataChart";
+import Chrome from "../../chrome/Chrome";
 
 const IconButton = ({draggable = true, size = 120, src, position, name, id, setOpen, setContents}) => {
     const isDrag = React.useRef(false)
@@ -32,7 +33,7 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
             case 4:
                 return {
                     title: "Chrome",
-                    component: <DataChart/>,
+                    component: <Chrome/>,
                 }
             default:
                 return null
