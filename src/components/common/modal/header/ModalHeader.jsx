@@ -15,7 +15,7 @@ const ModalHeader = ({title, setOpen}) => {
     }
     return (
         <Container direction={'row'}>
-            <List>
+            <List itemAlign={'row'} marginEnd={'10px'}>
                 <ListItem>
                     <ModalHeaderButton color={'#fc635c'} clickFunction={handleRedClick}/>
                 </ListItem>
