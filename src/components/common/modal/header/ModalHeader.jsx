@@ -1,5 +1,7 @@
 import ModalHeaderButton from "./button/ModalHeaderButton";
 import {Container} from "../../layout/Container";
+import {List} from "../../list/List";
+import {ListItem} from "../../list/ListItem";
 
 const ModalHeader = ({title, setOpen}) => {
     const handleRedClick = () => {
@@ -11,21 +13,19 @@ const ModalHeader = ({title, setOpen}) => {
     const handleGreenClick = () => {
 
     }
-
-    const buttonWrapperStyle = {
-        marginLeft: 5
-    }
     return (
         <Container direction={'row'}>
-            <div>
-                <ModalHeaderButton color={'#fc635c'} clickFunction={handleRedClick}/>
-            </div>
-            <div style={buttonWrapperStyle}>
-                <ModalHeaderButton color={'#fbba22'} clickFunction={handleYellowClick}/>
-            </div>
-            <div style={buttonWrapperStyle}>
-                <ModalHeaderButton color={'#2ace38'} clickFunction={handleGreenClick}/>
-            </div>
+            <List>
+                <ListItem>
+                    <ModalHeaderButton color={'#fc635c'} clickFunction={handleRedClick}/>
+                </ListItem>
+                <ListItem>
+                    <ModalHeaderButton color={'#fbba22'} clickFunction={handleYellowClick}/>
+                </ListItem>
+                <ListItem>
+                    <ModalHeaderButton color={'#2ace38'} clickFunction={handleGreenClick}/>
+                </ListItem>
+            </List>
         </Container>
     )
 }
