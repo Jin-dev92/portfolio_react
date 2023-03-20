@@ -3,15 +3,35 @@ import {Anchor, Divider, Dropdown, Space} from "antd";
 import Notification from "../common/notification/Notification";
 import {NotificationType} from "../common/notification/constant";
 import {ContentsWrapper} from "../common/layout/ContentsWrapper";
+import styled from "styled-components";
+const StyledAnchor = styled.a`
+`
+const items = [
+    {
+        key: '1',
+        label: (
+            <a target="_blank" rel="noopener noreferrer"
+               href="https://daffy-bacon-3c6.notion.site/0c59987b2f604387a62328484bb2864b?v=58a9a33d63764677aca16b15d3f70954&p=a40d27f7b71745918a4c2f08b1eda6c6&pm=c">LG
+                U+ 홈트Now STB</a>
+        )
+    },
+    {
+        key: '2',
+        label: (
+            <a target="_blank" rel="noopener noreferrer"
+               href="https://daffy-bacon-3c6.notion.site/0c59987b2f604387a62328484bb2864b?v=58a9a33d63764677aca16b15d3f70954&p=f5c6cad1db7b4b75ab4339b554a9077a&pm=c">T-Map
+                주차</a>
+        )
+    }
+]
+const indexFontStyle = {
+    fontWeight: 'bold',
+    fontSize: 24
+}
+const innerTextStyle = {
+    fontSize: 20
+}
 const About = () => {
-    const indexFontStyle = {
-        fontWeight: 'bold',
-        fontSize: 20
-    }
-    const innerTextStyle = {
-        fontSize: 14
-    }
-
     const [isOpen, setIsOpen] = React.useState(false)
     const currentAnchor = React.useRef(null)
 
@@ -20,25 +40,6 @@ const About = () => {
         currentAnchor.current = link
         setIsOpen(true)
     }
-
-    const items = [
-        {
-            key: '1',
-            label: (
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://daffy-bacon-3c6.notion.site/0c59987b2f604387a62328484bb2864b?v=58a9a33d63764677aca16b15d3f70954&p=a40d27f7b71745918a4c2f08b1eda6c6&pm=c">LG
-                    U+ 홈트Now STB</a>
-            )
-        },
-        {
-            key: '2',
-            label: (
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://daffy-bacon-3c6.notion.site/0c59987b2f604387a62328484bb2864b?v=58a9a33d63764677aca16b15d3f70954&p=f5c6cad1db7b4b75ab4339b554a9077a&pm=c">T-Map
-                    주차</a>
-            )
-        }
-    ]
 
 
     return (
@@ -66,23 +67,18 @@ const About = () => {
                             trigger={'click'}
                         >
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a href={'#'} onClick={(event) => event.preventDefault()}>
-                                <Space>Hybrid React 앱</Space>
-                            </a>
+                            <StyledAnchor href={'#'} onClick={(event) => event.preventDefault()}>
+                                Hybrid React 앱
+                            </StyledAnchor>
                         </Dropdown>
                         제작 경험 (STB, AOS, IOS)
                     </li>
-                    <li>Google Analytics 의
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a href={'https://ga-dev-tools.google/'}>
-                            <Space>데이터 패치 개발 도구</Space>
-                        </a>
-                        를 이용한
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a href={'https://daffy-bacon-3c6.notion.site/0c59987b2f604387a62328484bb2864b?v=58a9a33d63764677aca16b15d3f70954&p=c789d031b1d846ed9335979c75f7a915&pm=c'}>
-                            <Space>데이터 시각화</Space>
-                        </a>
-                        경험
+                    <li>
+                            Google Analytics 의
+                            <StyledAnchor href={'https://ga-dev-tools.google/'}>데이터 패치 개발 도구</StyledAnchor>
+                            를 이용한
+                            <StyledAnchor href={'https://daffy-bacon-3c6.notion.site/0c59987b2f604387a62328484bb2864b?v=58a9a33d63764677aca16b15d3f70954&p=c789d031b1d846ed9335979c75f7a915&pm=c'}>데이터 시각화</StyledAnchor>
+                            경험
                     </li>
                     <li>React 상태 관리 라이브러리 에 관한 이해 및 경험</li>
                     <li>atomic design 에 대한 이해</li>
