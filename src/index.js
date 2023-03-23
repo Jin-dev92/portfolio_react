@@ -2,19 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {QueryClient, QueryClientProvider} from "react-query";
+// import reportWebVitals from './reportWebVitals';
+import {QueryClient, QueryClientProvider, QueryErrorResetBoundary} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ConfigProvider, theme} from "antd";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Netflix from "./pages/Netflix";
+// import {Spinner} from "./components/common/Spinner";
+import {ErrorBoundary} from "react-error-boundary";
+import LoadingIndicator from "./components/common/LoadingIndicator";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
             retry: false,
-            // suspense: true
+            // suspense: true,
         }
     },
 })
@@ -25,14 +28,14 @@ const router = createBrowserRouter(
             element: <App/>,
             children: [
                 {
-                    path:"netflix",
-                    element: <Netflix/>
+                    path: "netflix",
+                    element: <Netflix/>,
+                    children: []
                 }
             ]
         }
     ]
 )
-
 root.render(
     <ConfigProvider
         theme={{
@@ -45,7 +48,15 @@ root.render(
                 process.env.NODE_ENV === 'development' ?
                     <ReactQueryDevtools initialIsOpen={false}/> : null
             }
-            <RouterProvider router={router}/>
+            <QueryErrorResetBoundary>
+                {
+                    ({reset}) => (
+                        <ErrorBoundary onReset={reset}>
+                            <RouterProvider router={router} fallbackElement={<LoadingIndicator/>}/>
+                        </ErrorBoundary>
+                    )
+                }
+            </QueryErrorResetBoundary>
         </QueryClientProvider>
     </ConfigProvider>
 );
@@ -53,4 +64,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals(console.log);

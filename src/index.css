@@ -11,11 +11,14 @@
 /*  -moz-osx-font-smoothing: grayscale;*/
 /*  -ms-overflow-style: none;*/
 /*}*/
+body, html {
+  /*height: 100vh*/
+}
 
 /*::-webkit-scrollbar {*/
 /*  display: none;*/
 /*}*/
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }

@@ -3,11 +3,12 @@ import {useQuery} from "react-query";
 import {weatherServiceAPI} from "../../api/api";
 import dayjs from "dayjs";
 import {ApiResultCode} from "../../api/constant/apiResult";
-import LoadingCard from "./card/LoadingCard";
+// import LoadingCard from "./card/LoadingCard";
 import {PrecipitationCategory, WeatherCategory, WindCategory} from "./card/constant/weatherCategory";
 import {DataType} from "./card/constant/dataType";
 import LoadingIndicator from "../common/LoadingIndicator";
 
+const LoadingCard = React.lazy(()=> import("./card/LoadingCard"))
 const DataChart = () => {
     const releaseTime = ["0200", "0500", "0800", "1100", "1400", "1700", "2000", "2300"]
     const currentTime = dayjs().clone().format("HH").concat("00")
@@ -33,7 +34,6 @@ const DataChart = () => {
 
     const [data, setData] = React.useState()
     const {isLoading} = useQuery("weather", () => weatherServiceAPI(config), {
-        retry: false,
         onSuccess: (data) => {
             const {response} = data.data
             const {header} = response

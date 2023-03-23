@@ -1,5 +1,5 @@
 import ModalHeaderButton from "./button/ModalHeaderButton";
-import {Container} from "../../layout/Container";
+import {FlexContainer} from "../../layout/FlexContainer";
 import {List} from "../../list/List";
 import {ListItem} from "../../list/ListItem";
 
@@ -14,7 +14,7 @@ const ModalHeader = ({title, setOpen}) => {
 
     }
     return (
-        <Container direction={'row'}>
+        <FlexContainer direction={'row'}>
             <List itemAlign={'row'} marginEnd={'10px'}>
                 <ListItem>
                     <ModalHeaderButton color={'#fc635c'} clickFunction={handleRedClick}/>
@@ -26,7 +26,7 @@ const ModalHeader = ({title, setOpen}) => {
                     <ModalHeaderButton color={'#2ace38'} clickFunction={handleGreenClick}/>
                 </ListItem>
             </List>
-        </Container>
+        </FlexContainer>
     )
 }
 

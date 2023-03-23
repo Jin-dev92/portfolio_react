@@ -1,10 +1,10 @@
 import React from 'react'
-import {Container} from "../common/layout/Container";
+import {FlexContainer} from "../common/layout/FlexContainer";
 
 const Chrome = () => {
     return (
-        <Container>
-        </Container>
+        <FlexContainer>
+        </FlexContainer>
     )
 }
 

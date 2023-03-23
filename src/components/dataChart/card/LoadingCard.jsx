@@ -4,7 +4,7 @@ import Meta from "antd/es/card/Meta";
 import {PrecipitationImageSrc, WeatherImageSrc, WindImageSrc} from "./constant/imageSrc";
 import CardDescription from "./CardDescription";
 import {PtyDetail, SkyDetail} from "./constant/weatherCategory";
-import {Container} from "../../common/layout/Container";
+import {FlexContainer} from "../../common/layout/FlexContainer";
 
 const LoadingCard = ({loading, data}) => {
     const cardStyle = {
@@ -14,7 +14,7 @@ const LoadingCard = ({loading, data}) => {
     }
 
     return (
-        <Container direction={'row'}>
+        <FlexContainer direction={'row'}>
             <Card
                 hoverable
                 loading={loading}
@@ -42,7 +42,7 @@ const LoadingCard = ({loading, data}) => {
                 <Meta title="PRECIPITATION"
                       description={<CardDescription data={data?.precipitation} type={'precipitation'}/>}/>
             </Card>
-        </Container>
+        </FlexContainer>
     )
 }
 

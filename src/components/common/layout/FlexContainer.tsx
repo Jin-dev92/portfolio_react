@@ -6,7 +6,7 @@ type ContainerProps =  {
     direction: Property.Direction | undefined;
 }
 
-export const Container = styled.div`
+export const FlexContainer = styled.div`
   display: flex;
   flex-direction: ${(props: ContainerProps) => props?.direction || 'column'};
   @media screen and (max-width: 350px) {
