@@ -1,6 +1,6 @@
 import React from 'react'
 import {useQuery} from "react-query";
-import {weatherServiceAPI} from "../../api/api";
+import {getCurrentWeather} from "../../api/api";
 import dayjs from "dayjs";
 import {ApiResultCode} from "../../api/constant/apiResult";
 import LoadingCard from "./card/LoadingCard";
@@ -18,7 +18,6 @@ const DataChart = () => {
     }
     const config = {
         params: {
-            serviceKey: process.env.REACT_APP_SERVICE_KEY,
             pageNo: 1,
             dataType: DataType.JSON,
             numOfRows: Object.keys(Object.assign(WeatherCategory, WindCategory, PrecipitationCategory)).length,
@@ -30,7 +29,7 @@ const DataChart = () => {
     }
 
     // const [data, setData] = React.useState()
-    const {isLoading, data} = useQuery("weather", () => weatherServiceAPI(config), {
+    const {isLoading, data} = useQuery("getWeather", () => getCurrentWeather(config), {
         onSuccess: (data) => {
 
         },
