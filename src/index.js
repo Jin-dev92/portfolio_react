@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ConfigProvider, theme} from "antd";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Netflix from "./pages/Netflix";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
@@ -15,8 +17,22 @@ const queryClient = new QueryClient({
             // suspense: true
         }
     },
-
 })
+const router = createBrowserRouter(
+    [
+        {
+            path: '/',
+            element: <App/>,
+            children: [
+                {
+                    path:"netflix",
+                    element: <Netflix/>
+                }
+            ]
+        }
+    ]
+)
+
 root.render(
     <ConfigProvider
         theme={{
@@ -29,7 +45,7 @@ root.render(
                 process.env.NODE_ENV === 'development' ?
                     <ReactQueryDevtools initialIsOpen={false}/> : null
             }
-            <App/>
+            <RouterProvider router={router}/>
         </QueryClientProvider>
     </ConfigProvider>
 );
