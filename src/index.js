@@ -10,7 +10,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Netflix from "./pages/Netflix";
 // import {Spinner} from "./components/common/Spinner";
 import {ErrorBoundary} from "react-error-boundary";
-import LoadingIndicator from "./components/common/LoadingIndicator";
+// import LoadingIndicator from "./components/common/LoadingIndicator";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
@@ -18,6 +18,7 @@ const queryClient = new QueryClient({
         queries: {
             retry: false,
             // suspense: true,
+            useErrorBoundary: true,
         }
     },
 })
@@ -52,7 +53,9 @@ root.render(
                 {
                     ({reset}) => (
                         <ErrorBoundary onReset={reset}>
-                            <RouterProvider router={router} fallbackElement={<LoadingIndicator/>}/>
+                            {/*<React.Suspense fallback={<LoadingIndicator/>}>*/}
+                                <RouterProvider router={router}/>
+                            {/*</React.Suspense>*/}
                         </ErrorBoundary>
                     )
                 }
