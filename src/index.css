@@ -11,10 +11,9 @@
 /*  -moz-osx-font-smoothing: grayscale;*/
 /*  -ms-overflow-style: none;*/
 /*}*/
-body, html {
-  /*height: 100vh*/
-}
-
+/*body{*/
+/*    overflow: hidden;*/
+/*}*/
 /*::-webkit-scrollbar {*/
 /*  display: none;*/
 /*}*/

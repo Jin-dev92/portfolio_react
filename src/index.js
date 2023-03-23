@@ -9,15 +9,12 @@ import {ConfigProvider, theme} from "antd";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Netflix from "./pages/Netflix";
 import LoadingIndicator from "./components/common/LoadingIndicator";
-// import {Spinner} from "./components/common/Spinner";
-// import {ErrorBoundary} from "react-error-boundary";
-// import LoadingIndicator from "./components/common/LoadingIndicator";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
-            retry: true,
+            retry: 1,
             suspense: true,
             useErrorBoundary: true,
         }
@@ -32,7 +29,6 @@ const router = createBrowserRouter(
                 {
                     path: "netflix",
                     element: <Netflix/>,
-                    children: []
                 }
             ]
         }
