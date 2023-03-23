@@ -6,7 +6,7 @@ import App from './App';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ConfigProvider, theme} from "antd";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
 import Netflix from "./pages/Netflix";
 import LoadingIndicator from "./components/common/LoadingIndicator";
 
@@ -20,20 +20,20 @@ const queryClient = new QueryClient({
         }
     },
 })
-const router = createBrowserRouter(
-    [
-        {
-            path: '/',
-            element: <App/>,
-            children: [
-                {
-                    path: "netflix",
-                    element: <Netflix/>,
-                }
-            ]
-        }
-    ]
-)
+// const router =
+//     [
+//         {
+//             path: '/',
+//             element: <App/>,
+//             children: [
+//                 {
+//                     path: "netflix",
+//                     element: <Netflix/>,
+//                 }
+//             ]
+//         }
+//     ]
+
 root.render(
     <ConfigProvider
         theme={{
@@ -46,7 +46,15 @@ root.render(
                 process.env.NODE_ENV === 'development' ?
                     <ReactQueryDevtools initialIsOpen={false}/> : null
             }
-            <RouterProvider router={router} fallbackElement={<LoadingIndicator/>}/>
+            {/*<RouterProvider router={router} fallbackElement={<LoadingIndicator/>}/>*/}
+            <BrowserRouter>
+                <Routes>
+                    <Route path={"/"} element={<App/>}/>
+                    <Route path={"/netflix"} element={<Netflix/>}/>
+                {/*    useParams*/}
+                </Routes>
+            </BrowserRouter>
+
         </QueryClientProvider>
     </ConfigProvider>
 );
