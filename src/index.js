@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
-            retry: false,
+            retry: true,
             suspense: true,
             useErrorBoundary: true,
         }

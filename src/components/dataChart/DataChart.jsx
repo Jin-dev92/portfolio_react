@@ -29,38 +29,10 @@ const DataChart = () => {
         },
     }
 
-    const [data, setData] = React.useState()
-    const {isLoading} = useQuery("weather", () => weatherServiceAPI(config), {
+    // const [data, setData] = React.useState()
+    const {isLoading, data} = useQuery("weather", () => weatherServiceAPI(config), {
         onSuccess: (data) => {
-            const {response} = data.data
-            const {header} = response
-            const {resultCode} = header
-            if (resultCode === ApiResultCode.NORMAL_SERVICE) {
-                setData(
-                    response.body.items.item.reduce((newObject, object) => {
-                        if (Object.values(WeatherCategory).includes(object?.category)) {
-                            newObject['weather'] = {
-                                ...newObject['weather'],
-                                [object?.category]: object?.fcstValue
-                            }
-                        }
-                        if (Object.values(WindCategory).includes(object?.category)) {
-                            newObject['wind'] = {
-                                ...newObject['wind'],
-                                [object?.category]: object?.fcstValue
-                            }
-                        }
-                        if (Object.values(PrecipitationCategory).includes(object?.category)) {
-                            newObject['precipitation'] = {
-                                ...newObject['precipitation'],
-                                [object?.category]: object?.fcstValue
-                            }
-                        }
-                        return newObject
-                    }, {})
-                )
 
-            }
         },
     })
 
