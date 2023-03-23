@@ -6,9 +6,9 @@ import App from './App';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ConfigProvider, theme} from "antd";
-import {BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Netflix from "./pages/Netflix";
-import LoadingIndicator from "./components/common/LoadingIndicator";
+import {SuspenseComponent} from "./components/common/SuspenseComponent";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
@@ -50,7 +50,7 @@ root.render(
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<App/>}/>
-                    <Route path={"/netflix"} element={<Netflix/>}/>
+                    <Route path={"/netflix"} element={<SuspenseComponent children={<Netflix/>}/>}/>
                 {/*    useParams*/}
                 </Routes>
             </BrowserRouter>
