@@ -1,5 +1,5 @@
 import React from 'react';
-import {Anchor, Divider, Dropdown, Space} from "antd";
+import {Anchor, Divider, Dropdown} from "antd";
 import Notification from "../common/notification/Notification";
 import {NotificationType} from "../common/notification/constant";
 import {ContentsWrapper} from "../common/layout/ContentsWrapper";

@@ -2,7 +2,7 @@ import React from 'react'
 import {useQuery} from "react-query";
 import {getCurrentWeather} from "../../api/api";
 import dayjs from "dayjs";
-import {ApiResultCode} from "../../api/constant/apiResult";
+// import {ApiResultCode} from "../../api/constant/apiResult";
 import LoadingCard from "./card/LoadingCard";
 import {PrecipitationCategory, WeatherCategory, WindCategory} from "./card/constant/weatherCategory";
 import {DataType} from "./card/constant/dataType";

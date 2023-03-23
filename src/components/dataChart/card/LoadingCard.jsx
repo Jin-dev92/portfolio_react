@@ -5,7 +5,7 @@ import {PrecipitationImageSrc, WeatherImageSrc, WindImageSrc} from "./constant/i
 import CardDescription from "./CardDescription";
 import {PrecipitationCategory, PtyDetail, SkyDetail, WeatherCategory, WindCategory} from "./constant/weatherCategory";
 import {FlexContainer} from "../../common/layout/FlexContainer";
-import {ApiResultCode} from "../../../api/constant/apiResult";
+// import {ApiResultCode} from "../../../api/constant/apiResult";
 
 const cardStyle = {
     width: 300,
