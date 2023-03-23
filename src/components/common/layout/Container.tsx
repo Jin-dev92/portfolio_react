@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import {ContainerProps} from "../../../interface/ContainerProps";
+import {Property} from "csstype";
+
+
+type ContainerProps =  {
+    direction: Property.Direction | undefined;
+}
 
 export const Container = styled.div`
   display: flex;
