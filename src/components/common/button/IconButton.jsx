@@ -4,6 +4,7 @@ import About from "../../about/About";
 import Game from "../../game/Game";
 import DataChart from "../../dataChart/DataChart";
 import Chrome from "../../chrome/Chrome";
+import {SuspenseComponent} from "../SuspenseComponent";
 
 
 const IconButton = ({draggable = true, size = 120, src, position, name, id, setOpen, setContents}) => {
@@ -29,7 +30,7 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
             case 3:
                 return {
                     title: "Data API",
-                    component: <DataChart/>,
+                    component: <SuspenseComponent children={<DataChart/>}/>,
                 }
             case 4:
                 return {

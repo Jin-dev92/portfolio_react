@@ -6,7 +6,6 @@ import {ApiResultCode} from "../../api/constant/apiResult";
 import LoadingCard from "./card/LoadingCard";
 import {PrecipitationCategory, WeatherCategory, WindCategory} from "./card/constant/weatherCategory";
 import {DataType} from "./card/constant/dataType";
-// const LoadingCard = React.lazy(() => import("./card/LoadingCard"))
 const DataChart = () => {
     const releaseTime = ["0200", "0500", "0800", "1100", "1400", "1700", "2000", "2300"]
     const currentTime = dayjs().clone().format("HH").concat("00")
@@ -32,15 +31,13 @@ const DataChart = () => {
 
     const [data, setData] = React.useState()
     const {isLoading} = useQuery("weather", () => weatherServiceAPI(config), {
-        useErrorBoundary: true,
-        // suspense: true,
         onSuccess: (data) => {
             const {response} = data.data
             const {header} = response
             const {resultCode} = header
             if (resultCode === ApiResultCode.NORMAL_SERVICE) {
                 setData(
-                    response.body.items.item.reduce((newObject, object, idx) => {
+                    response.body.items.item.reduce((newObject, object) => {
                         if (Object.values(WeatherCategory).includes(object?.category)) {
                             newObject['weather'] = {
                                 ...newObject['weather'],
@@ -68,9 +65,7 @@ const DataChart = () => {
     })
 
     return (
-        // <React.Suspense fallback={<LoadingIndicator/>}>
-            <LoadingCard loading={isLoading} data={data}/>
-        // </React.Suspense>
+        <LoadingCard loading={isLoading} data={data}/>
     )
 }
 

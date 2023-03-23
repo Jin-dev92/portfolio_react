@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
-import {QueryClient, QueryClientProvider, QueryErrorResetBoundary} from "react-query";
+import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ConfigProvider, theme} from "antd";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Netflix from "./pages/Netflix";
+import LoadingIndicator from "./components/common/LoadingIndicator";
 // import {Spinner} from "./components/common/Spinner";
-import {ErrorBoundary} from "react-error-boundary";
+// import {ErrorBoundary} from "react-error-boundary";
 // import LoadingIndicator from "./components/common/LoadingIndicator";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +18,7 @@ const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
             retry: false,
-            // suspense: true,
+            suspense: true,
             useErrorBoundary: true,
         }
     },
@@ -49,17 +50,7 @@ root.render(
                 process.env.NODE_ENV === 'development' ?
                     <ReactQueryDevtools initialIsOpen={false}/> : null
             }
-            <QueryErrorResetBoundary>
-                {
-                    ({reset}) => (
-                        <ErrorBoundary onReset={reset}>
-                            {/*<React.Suspense fallback={<LoadingIndicator/>}>*/}
-                                <RouterProvider router={router}/>
-                            {/*</React.Suspense>*/}
-                        </ErrorBoundary>
-                    )
-                }
-            </QueryErrorResetBoundary>
+            <RouterProvider router={router} fallbackElement={<LoadingIndicator/>}/>
         </QueryClientProvider>
     </ConfigProvider>
 );
