@@ -38,14 +38,17 @@ const Wrapper = styled.div`
 `
 const userList = [
     {
+        id:1,
         name: '김의진',
         src: process.env.PUBLIC_URL.concat('/images/icons/profile/default_user_blue.png')
     },
     {
+        id:2,
         name: '유재석',
         src: process.env.PUBLIC_URL.concat('/images/icons/profile/default_user_yellow.png')
     },
     {
+        id:3,
         name: '송강호',
         src: process.env.PUBLIC_URL.concat('/images/icons/profile/default_user_red.png')
     },
@@ -57,11 +60,6 @@ const userList = [
 // }
 
 export const UserListComponent = () => {
-    const onClickAnchorHandler = (event) => {
-        event.preventDefault();
-        // redux 로 현재 선택된 유저를 바꿔 준다.
-    }
-
     return (
         <Wrapper>
             <h1>넷플릭스를 시청할 프로필을 선택하세요.</h1>
@@ -70,7 +68,8 @@ export const UserListComponent = () => {
                     userList.reduce((acc, currentUser, index) => {
                         acc.push(
                             <li key={'user_profile_' + index}>
-                                <a href={'#'} onClick={onClickAnchorHandler}>
+                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                <a href={null}>
                                     <UserComponent user={currentUser}/>
                                 </a>
                             </li>
