@@ -17,6 +17,25 @@
 /*::-webkit-scrollbar {*/
 /*  display: none;*/
 /*}*/
+h1 {
+    margin: 0.67em 0;
+    font-size: 1.5em;
+    color:white;
+}
+
+.profile_name {
+    color: grey;
+}
+
+body {
+    background-color: #141414;
+}
+
+p {
+    font-size: 1em;
+    color: white;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
