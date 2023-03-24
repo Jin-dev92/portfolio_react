@@ -6,6 +6,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Card} from "antd";
 import {UserListComponent} from "../components/netflix/UserListComponent";
+import {useSelector} from "react-redux";
 
 
 const config = {
@@ -19,18 +20,25 @@ const NetflixHomeContainer = styled(FlexContainer)`
 `
 
 const Netflix = () => {
-    const [currentUser, setCurrentUser] = React.useState(null) //@todo redux 로 처리 하는게 나을 듯
+    const currentUser = useSelector(state => state.userSlice.currentUser)
     const {data} = useQuery('getMovieList', () => getBoxOfficeList(config), {})
     const {dailyBoxOfficeList} = data.data.boxOfficeResult
     return (
         <NetflixHomeContainer direction={'column'}>
             {
                 currentUser ?
-                    dailyBoxOfficeList.map((item, index) => (
-                        <Card>
-
-                        </Card>
-                    )) : (
+                    (
+                        <div>
+                            <h1>현재 공사 중 입니다.</h1>
+                            {
+                                dailyBoxOfficeList.map((item, index) => (
+                                    <Card>
+                                        {JSON.stringify(item)}
+                                    </Card>
+                                ))
+                            }
+                        </div>
+                    ) : (
                         <UserListComponent/>
                     )
             }
