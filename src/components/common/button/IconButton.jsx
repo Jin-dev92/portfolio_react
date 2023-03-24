@@ -3,11 +3,12 @@ import Draggable from "react-draggable";
 import About from "../../about/About";
 import Game from "../../game/Game";
 import DataChart from "../../dataChart/DataChart";
-import Chrome from "../../chrome/Chrome";
 import {SuspenseComponent} from "../SuspenseComponent";
+import {useNavigate, } from "react-router-dom";
 
 
 const IconButton = ({draggable = true, size = 120, src, position, name, id, setOpen, setContents}) => {
+    const navigate = useNavigate()
     const isDrag = React.useRef(false)
     const onDragStart = () => {
         isDrag.current = true
@@ -34,8 +35,8 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
                 }
             case 4:
                 return {
-                    title: "Chrome",
-                    component: <Chrome/>,
+                    title: "Netflix",
+                    component: null,
                 }
             default:
                 return null
@@ -49,7 +50,11 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
                 setContents(getClassifiedData(id))
                 break
             case 2:
-                setOpen(true)
+                if (id === 4) {
+                    navigate('/netflix')
+                } else {
+                    setOpen(true)
+                }
                 break
             default:
                 break
@@ -58,7 +63,7 @@ const IconButton = ({draggable = true, size = 120, src, position, name, id, setO
 
     const imageStyle = {
         backgroundImage: `url(${src})`,
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         cursor: 'pointer',
         width: size,

@@ -33,13 +33,13 @@
     },
     {
       "id": 4,
-      "name": "Chrome",
-      "src": "/images/icons/chrome.png",
+      "name": "Netflix",
+      "src": "/images/icons/netflix/netflix_1.png",
       "position": {
         "x": 25,
         "y": 175
       },
-      "disabled": true
+      "disabled": false
     }
   ]
 }

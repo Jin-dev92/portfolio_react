@@ -4,9 +4,12 @@ import {getBoxOfficeList} from "../api/api";
 import dayjs from "dayjs";
 import React from 'react';
 import styled from "styled-components";
-import {Card} from "antd";
 import {UserListComponent} from "../components/netflix/UserListComponent";
 import {useSelector} from "react-redux";
+import {MovieCard} from "../components/netflix/MovieCard";
+import {List} from "../components/common/list/List";
+import {ListItem} from "../components/common/list/ListItem";
+import {MovieListComponent} from "../components/netflix/MovieListComponent";
 
 
 const config = {
@@ -28,16 +31,10 @@ const Netflix = () => {
             {
                 currentUser ?
                     (
-                        <div>
-                            <h1>현재 공사 중 입니다.</h1>
-                            {
-                                dailyBoxOfficeList.map((item, index) => (
-                                    <Card>
-                                        {JSON.stringify(item)}
-                                    </Card>
-                                ))
-                            }
-                        </div>
+                        <FlexContainer>
+                            <h1>현재 공사 중 입니다. 👷</h1>
+                            <MovieListComponent dataList={dailyBoxOfficeList}/>
+                        </FlexContainer>
                     ) : (
                         <UserListComponent/>
                     )
