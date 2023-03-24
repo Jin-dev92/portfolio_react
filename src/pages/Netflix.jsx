@@ -3,6 +3,10 @@ import {useQuery} from "react-query";
 import {getBoxOfficeList} from "../api/api";
 import dayjs from "dayjs";
 import React from 'react';
+import styled from "styled-components";
+import {Card} from "antd";
+import {UserListComponent} from "../components/netflix/UserListComponent";
+
 
 const config = {
     params: {
@@ -10,18 +14,28 @@ const config = {
     }
 }
 
+const NetflixHomeContainer = styled(FlexContainer)`
+  height: 100vh;
+`
+
 const Netflix = () => {
-    // const [currentUser, setCurrentUser] = React.useState(null)
+    const [currentUser, setCurrentUser] = React.useState(null) //@todo redux 로 처리 하는게 나을 듯
     const {data} = useQuery('getMovieList', () => getBoxOfficeList(config), {})
     const {dailyBoxOfficeList} = data.data.boxOfficeResult
     return (
-        <FlexContainer direction={'column'}>
+        <NetflixHomeContainer direction={'column'}>
             {
-                dailyBoxOfficeList.map((item, index) => (
-                    <div>{JSON.stringify(item)}</div>
-                ))
+                currentUser ?
+                    dailyBoxOfficeList.map((item, index) => (
+                        <Card>
+
+                        </Card>
+                    )) : (
+                        <UserListComponent/>
+                    )
             }
-        </FlexContainer>
+
+        </NetflixHomeContainer>
     )
 }
 
