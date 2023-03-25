@@ -1,5 +1,5 @@
-import {List} from "../common/list/List";
-import {ListItem} from "../common/list/ListItem";
+// import {List} from "../common/list/List";
+// import {ListItem} from "../common/list/ListItem";
 import {MovieCard} from "./MovieCard";
 import React from "react";
 import styled from "styled-components";

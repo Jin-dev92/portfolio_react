@@ -1,31 +1,27 @@
 import {FlexContainer} from "../components/common/layout/FlexContainer";
 import {useQuery} from "react-query";
-import {getBoxOfficeList} from "../api/api";
-import dayjs from "dayjs";
+import {getPopularMovieList} from "../api/api";
 import React from 'react';
 import styled from "styled-components";
 import {UserListComponent} from "../components/netflix/UserListComponent";
 import {useSelector} from "react-redux";
-import {MovieCard} from "../components/netflix/MovieCard";
-import {List} from "../components/common/list/List";
-import {ListItem} from "../components/common/list/ListItem";
 import {MovieListComponent} from "../components/netflix/MovieListComponent";
 
-
-const config = {
-    params: {
-        targetDt: dayjs().clone().subtract(1, "day").format('YYYYMMDD')
-    }
-}
 
 const NetflixHomeContainer = styled(FlexContainer)`
   height: 100vh;
 `
-
+const config = {
+    params: {
+        page: 1,
+        region: 'KR'
+    }
+}
+// https://image.tmdb.org/t/p/w500/
 const Netflix = () => {
     const currentUser = useSelector(state => state.userSlice.currentUser)
-    const {data} = useQuery('getMovieList', () => getBoxOfficeList(config), {})
-    const {dailyBoxOfficeList} = data.data.boxOfficeResult
+    const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
+    const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
     return (
         <NetflixHomeContainer direction={'column'}>
             {
@@ -33,7 +29,7 @@ const Netflix = () => {
                     (
                         <FlexContainer>
                             <h1>현재 공사 중 입니다. 👷</h1>
-                            <MovieListComponent dataList={dailyBoxOfficeList}/>
+                            <MovieListComponent dataList={movieListSortedByPopular}/>
                         </FlexContainer>
                     ) : (
                         <UserListComponent/>
