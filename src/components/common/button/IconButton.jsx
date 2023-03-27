@@ -5,6 +5,8 @@ import React from 'react'
 const StyledButton = styled.button`
 `
 export const IconButton = ({src, func, imageComponent}) => {
+    // console.log(process)
+    // appPublic
     const onClickHandler = (event) => {
         event.preventDefault()
         if (func) func()
