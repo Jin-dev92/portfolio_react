@@ -5,14 +5,14 @@ import styled from "styled-components";
 import React from 'react';
 import {NetflixLogo} from "./NetflixLogo";
 import {IconButton} from "../common/button/IconButton";
-// import {NotificationIconSVG, SearchIconSVG} from "../svg/SVG";
+import {ReactComponent as NotificationIcon} from "../../assets/svg/notification.svg";
+import {ReactComponent as SearchIcon} from "../../assets/svg/search.svg";
 
 const StyledAnchor = styled.a`
   text-decoration: none
 `
 const StyledHeader = styled.header`
   display: flex;
-  //flex-direction: row;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -28,9 +28,17 @@ const StyledListItem = styled(ListItem)`
   padding: 8px 10px;
   font-weight: normal;
 `
+
+const StyledRightSideNav = styled(Navigation)`
+  margin-right: 20px;
+
+  & ul li {
+    margin-inline-end: 10px;
+  }
+`
 const navIcon = [
-    {src: '/images/icons/netflix/notification.svg', },
-    {src: '/images/icons/netflix/search.svg', },
+    {src: '/images/icons/netflix/search.svg', component: <NotificationIcon width={32} height={32} fill={'white'}/>},
+    {src: '/images/icons/netflix/notification.svg',  component: <SearchIcon width={32} height={32} fill={'white'}/>},
 ]
 const NetflixMainNavigation = () => {
     return (
@@ -57,19 +65,17 @@ const NetflixMainNavigation = () => {
                     </StyledListItem>
                 </List>
             </Navigation>
-            <Navigation>
-                <Navigation>
-                    <List itemAlign={'row'}>
-                        {
-                            navIcon.map((item, index) => (
-                                <ListItem key={`nav-item-${index}`}>
-                                    <IconButton src={item.src} func={() => console.log('temp')}/>
-                                </ListItem>
-                            ))
-                        }
-                    </List>
-                </Navigation>
-            </Navigation>
+            <StyledRightSideNav>
+                <List itemAlign={'row'}>
+                    {
+                        navIcon.map((item, index) => (
+                            <ListItem key={`nav-item-${index}`}>
+                                <IconButton src={item.src} func={() => console.log('temp')} width={32} height={32} component={item.component}/>
+                            </ListItem>
+                        ))
+                    }
+                </List>
+            </StyledRightSideNav>
         </StyledHeader>
     )
 }

@@ -29,6 +29,7 @@ h1 {
 body {
     background-color: #141414;
     color: #fff;
+    overflow-x: hidden;
 }
 
 main {
