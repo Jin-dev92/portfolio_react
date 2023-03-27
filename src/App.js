@@ -1,5 +1,5 @@
 // import {Layout} from "antd";
-import IconButton from "./components/common/button/IconButton";
+import FolderIconButton from "./components/common/button/FolderIconButton";
 import appData from './mock/app_data.json'
 import CommonModal from "./components/common/modal/CommonModal";
 import React from "react";
@@ -23,13 +23,13 @@ function App() {
             {
                 appData.app_list.map((data, idx) => {
                     return !data.disabled ? (
-                        <IconButton src={data.src}
-                                    position={data.position}
-                                    key={`icon-button-${idx}`}
-                                    name={data.name}
-                                    id={data.id}
-                                    setOpen={setOpen}
-                                    setContents={setContents}
+                        <FolderIconButton src={data.src}
+                                          position={data.position}
+                                          key={`icon-button-${idx}`}
+                                          name={data.name}
+                                          id={data.id}
+                                          setOpen={setOpen}
+                                          setContents={setContents}
                         />
                     ) : null
                 })

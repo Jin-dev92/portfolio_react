@@ -6,9 +6,11 @@ import styled from "styled-components";
 import {UserListComponent} from "../components/netflix/UserListComponent";
 import {useSelector} from "react-redux";
 import {MovieListComponent} from "../components/netflix/MovieListComponent";
+import AutoPlayVideoComponents from "../components/netflix/AutoPlayVideoComponents";
+import NetflixMainNavigation from "../components/netflix/NetflixMainNavigation";
 
 
-const NetflixHomeContainer = styled(FlexContainer)`
+const NetflixHomeContainer = styled.main`
   height: 100vh;
 `
 const config = {
@@ -17,20 +19,29 @@ const config = {
         region: 'KR'
     }
 }
-// https://image.tmdb.org/t/p/w500/
+
 const Netflix = () => {
     const currentUser = useSelector(state => state.userSlice.currentUser)
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
     const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
+
     return (
         <NetflixHomeContainer direction={'column'}>
             {
                 currentUser ?
                     (
-                        <FlexContainer>
-                            <h1>현재 공사 중 입니다. 👷</h1>
-                            <MovieListComponent dataList={movieListSortedByPopular}/>
-                        </FlexContainer>
+                        <>
+                            <NetflixMainNavigation>
+
+                            </NetflixMainNavigation>
+                            <FlexContainer>
+                                <AutoPlayVideoComponents/>
+                            </FlexContainer>
+                            <FlexContainer>
+                                <h1>현재 공사 중 입니다. 👷</h1>
+                                <MovieListComponent dataList={movieListSortedByPopular}/>
+                            </FlexContainer>
+                        </>
                     ) : (
                         <UserListComponent/>
                     )

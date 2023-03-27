@@ -8,6 +8,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
+const StyledImageComponent = styled(ImageComponent)`
+  width: 10vw;
+  height: 10vw;
+`
 export const UserComponent = ({user}) => {
     const {name, src} = user
     const dispatch = useDispatch()
@@ -18,7 +22,7 @@ export const UserComponent = ({user}) => {
     return (
         <Wrapper onClick={onClickHandler}>
             <ImageWrapper>
-                <ImageComponent src={src} className={'profile_image'}/>
+                <StyledImageComponent src={src} className={'profile_image'}/>
             </ImageWrapper>
             <p className={'profile_name'}>{name}</p>
         </Wrapper>

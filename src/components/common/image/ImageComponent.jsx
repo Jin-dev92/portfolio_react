@@ -7,8 +7,8 @@ export const ImageComponent = styled.div`
   border: none;
   border-radius: 4px;
   box-sizing: border-box;
-  width: 10vw;
-  height: 10vw;
+  //width: 10vw;
+  //height: 10vw;
   position: relative;
   max-width: 200px;
   max-height: 200px;
