@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   display: flex;
   width: 100vw;
   margin: 0;
-  padding: 0;
+  padding: 0 4%;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -29,7 +29,7 @@ const StyledHeader = styled.header`
   }
 
   & ul li:first-child {
-    margin-inline-end: 20px;
+    margin-inline-end: 25px;
   }
 `
 
@@ -39,10 +39,8 @@ const StyledListItem = styled(ListItem)`
 `
 
 const StyledRightSideNav = styled(Navigation)`
-  margin-right: 20px;
-
   & ul li {
-    margin-inline-end: 10px;
+    //margin-inline-end: 10px;
   }
 `
 const navIcon = [

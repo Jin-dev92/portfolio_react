@@ -13,6 +13,8 @@ const AutoPlayVideoComponents = ({videoSrc}) => {
         autoplay: true,
         controls: false,
         responsive: true,
+        loop: false,
+        mute: true,
         fluid: true,
         sources: [{
             src: videoSrc || '/videos/1920x1080.mp4',
