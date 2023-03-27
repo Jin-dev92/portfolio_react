@@ -2,12 +2,14 @@ import styled from "styled-components";
 import React from 'react';
 import videojs from "video.js";
 import VideoJS from "../common/video/VideoJS";
+import {VideoComponentOverBanner} from "./VideoComponentOverBanner";
 
 const Wrapper = styled.div`
   width: 100vw;
   height: auto;
+  position: relative;
 `
-const AutoPlayVideoComponents = ({videoSrc}) => {
+const AutoPlayVideoComponents = ({videoSrc, banner}) => {
     const playerRef = React.useRef(null);
     const videoJsOptions = {
         autoplay: true,
@@ -37,6 +39,7 @@ const AutoPlayVideoComponents = ({videoSrc}) => {
 
     return (
         <Wrapper>
+            <VideoComponentOverBanner banner={banner}/>
             <VideoJS options={videoJsOptions} onReady={handlePlayerReady}/>
         </Wrapper>
     )

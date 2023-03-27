@@ -9,7 +9,8 @@ import {ReactComponent as NotificationIcon} from "../../assets/svg/notification.
 import {ReactComponent as SearchIcon} from "../../assets/svg/search.svg";
 
 const StyledAnchor = styled.a`
-  text-decoration: none
+  text-decoration: none;
+  cursor: pointer;
 `
 const StyledHeader = styled.header`
   display: flex;

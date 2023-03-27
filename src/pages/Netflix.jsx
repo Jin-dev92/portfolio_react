@@ -24,7 +24,7 @@ const Netflix = () => {
     const currentUser = useSelector(state => state.userSlice.currentUser)
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
     const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
-
+    const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)
     return (
         <NetflixHomeContainer>
             {
@@ -33,7 +33,7 @@ const Netflix = () => {
                         <>
                             <NetflixMainNavigation/>
                             <FlexContainer>
-                                <AutoPlayVideoComponents/>
+                                <AutoPlayVideoComponents banner={banner[0]}/>
                             </FlexContainer>
                             <FlexContainer>
                                 <h1>현재 공사 중 입니다. 👷</h1>
