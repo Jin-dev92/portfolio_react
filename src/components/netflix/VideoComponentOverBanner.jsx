@@ -19,7 +19,7 @@ export const VideoComponentOverBanner = ({banner}) => {
     return (
         <Wrapper>
             <StyledArticle>
-                <h4>{title}</h4>
+                <p className={'banner-title'}>{title}</p>
                 <p>{overview}</p>
             </StyledArticle>
         </Wrapper>
