@@ -13,7 +13,6 @@ export const IconButton = ({src, func, width, height, component}) => {
     return (
         <StyledButton onClick={onClickHandler}>
             {component}
-            {/*<img src={src} alt="" width={width} height={height}/>*/}
         </StyledButton>
     )
 }

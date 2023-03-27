@@ -26,14 +26,12 @@ const Netflix = () => {
     const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
 
     return (
-        <NetflixHomeContainer direction={'column'}>
+        <NetflixHomeContainer>
             {
                 currentUser ?
                     (
                         <>
-                            <NetflixMainNavigation>
-
-                            </NetflixMainNavigation>
+                            <NetflixMainNavigation/>
                             <FlexContainer>
                                 <AutoPlayVideoComponents/>
                             </FlexContainer>

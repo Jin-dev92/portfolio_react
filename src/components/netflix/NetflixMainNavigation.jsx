@@ -22,10 +22,19 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   z-index: 9999;
+
+  & ul {
+    display: flex;
+    align-items: center;
+  }
+
+  & ul li:first-child {
+    margin-inline-end: 20px;
+  }
 `
 
 const StyledListItem = styled(ListItem)`
-  padding: 8px 10px;
+  padding: 0 10px;
   font-weight: normal;
 `
 
@@ -38,7 +47,7 @@ const StyledRightSideNav = styled(Navigation)`
 `
 const navIcon = [
     {src: '/images/icons/netflix/search.svg', component: <NotificationIcon width={32} height={32} fill={'white'}/>},
-    {src: '/images/icons/netflix/notification.svg',  component: <SearchIcon width={32} height={32} fill={'white'}/>},
+    {src: '/images/icons/netflix/notification.svg', component: <SearchIcon width={32} height={32} fill={'white'}/>},
 ]
 const NetflixMainNavigation = () => {
     return (
@@ -70,7 +79,8 @@ const NetflixMainNavigation = () => {
                     {
                         navIcon.map((item, index) => (
                             <ListItem key={`nav-item-${index}`}>
-                                <IconButton src={item.src} func={() => console.log('temp')} width={32} height={32} component={item.component}/>
+                                <IconButton src={item.src} func={() => console.log('temp')} width={32} height={32}
+                                            component={item.component}/>
                             </ListItem>
                         ))
                     }

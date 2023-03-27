@@ -1,11 +1,21 @@
-import {ImageWrapper} from "../common/image/ImageWrapper";
-import {ImageComponent} from "../common/image/ImageComponent";
+import {IconButton} from "../common/button/IconButton";
+import React from "react";
+import styled from "styled-components";
+// import {ReactComponent as Logo} from "../../assets/svg/netflix_logo_64.svg";
 
-const imageSrc = ""
+const StyledImage = styled.img`
+`
+const Wrapper = styled.div`
+  width: 95px;
+`
 export const NetflixLogo = () => {
+    const onClickHandler = (event) => {
+        event.preventDefault();
+    }
+
     return (
-        <ImageWrapper>
-            <ImageComponent src={imageSrc} className={'logo'}/>
-        </ImageWrapper>
+        <Wrapper>
+            <IconButton func={onClickHandler} component={<StyledImage src={'/images/icons/netflix/netflix_logo.png'}/>}/>
+        </Wrapper>
     )
 }
