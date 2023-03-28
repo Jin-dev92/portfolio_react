@@ -40,6 +40,7 @@ root.render(
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
                         <Route path={"/netflix"} element={<SuspenseComponent children={<Netflix/>}/>}/>
+                        <Route path={"/netflix/:id"} element={<SuspenseComponent children={<Netflix/>}/>}/>
                         {/*    useParams*/}
                     </Routes>
                 </BrowserRouter>
