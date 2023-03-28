@@ -19,7 +19,9 @@ const config = {
         region: 'KR'
     }
 }
-
+const NetflixBodyContainer = styled(FlexContainer)`
+    padding: 0 5vw
+`
 const Netflix = () => {
     const currentUser = useSelector(state => state.userSlice.currentUser)
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
@@ -35,10 +37,10 @@ const Netflix = () => {
                             <FlexContainer>
                                 <AutoPlayVideoComponents banner={banner[0]}/>
                             </FlexContainer>
-                            <FlexContainer>
+                            <NetflixBodyContainer>
                                 <h1>현재 공사 중 입니다. 👷</h1>
-                                <MovieListComponent dataList={movieListSortedByPopular}/>
-                            </FlexContainer>
+                                <MovieListComponent dataList={movieListSortedByPopular} title={'인기 순 추천'}/>
+                            </NetflixBodyContainer>
                         </>
                     ) : (
                         <UserListComponent/>
