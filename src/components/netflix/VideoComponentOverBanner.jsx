@@ -16,7 +16,7 @@ const StyledArticle = styled.article`
 `
 export const VideoComponentOverBanner = ({banner}) => {
     const {title, overview} = banner
-    console.log(banner)
+    // console.log(banner)
         // , original_title, release_title, poster_path
     return (
         <Wrapper>

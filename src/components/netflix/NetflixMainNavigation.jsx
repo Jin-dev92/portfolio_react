@@ -12,7 +12,7 @@ const StyledAnchor = styled.a`
   text-decoration: none;
   cursor: pointer;
 `
-const StyledHeader = styled.header`
+const StyledWrapper = styled.div`
   display: flex;
   width: 100vw;
   margin: 0;
@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
   }
 
   & ul li:first-child {
-    margin-inline-end: 25px;
+    margin-inline-end: 15px;
   }
 `
 
@@ -50,13 +50,12 @@ const navIcon = [
 ]
 const NetflixMainNavigation = () => {
     return (
-        <StyledHeader>
+        <StyledWrapper>
             <Navigation>
                 <List itemAlign={'row'}>
-                    {/* @todo 컴포넌트로 빼야함 */}
-                    {/*<StyledListItem>*/}
-                    {/*    <NetflixLogo/>*/}
-                    {/*</StyledListItem>*/}
+                    <StyledListItem>
+                        <NetflixLogo/>
+                    </StyledListItem>
                     <StyledListItem>
                         <StyledAnchor><p>홈</p></StyledAnchor>
                     </StyledListItem>
@@ -86,7 +85,7 @@ const NetflixMainNavigation = () => {
                     }
                 </List>
             </StyledRightSideNav>
-        </StyledHeader>
+        </StyledWrapper>
     )
 }
 export default NetflixMainNavigation
