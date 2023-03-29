@@ -68,9 +68,8 @@ const NetflixFooter = () => {
             <List itemAlign={'row'}>
                 {
                     iconList.map((icon, index) => (
-                        <li>
-                            <IconButton src={icon.src} func={icon.func} width={24} height={24}
-                                        component={icon.component}/>
+                        <li key={`footer-icon-${index}`}>
+                            <IconButton component={icon.component}/>
                         </li>
                     ))
                 }

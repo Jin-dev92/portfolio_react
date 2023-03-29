@@ -7,31 +7,24 @@ import {useSelector} from "react-redux";
 import NetflixBody from "../components/netflix/NetflixBody";
 import NetflixHeader from "../components/netflix/NetflixHeader";
 import NetflixFooter from "../components/netflix/NetflixFooter";
+import {SuspenseComponent} from "../components/common/SuspenseComponent";
 
 
 const NetflixHomeContainer = styled.main`
   height: 100vh;
 `
-const config = {
-    params: {
-        page: 1,
-        region: 'KR'
-    }
-}
 const Netflix = () => {
     const currentUser = useSelector(state => state.userSlice.currentUser)
-    const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
-    const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
-    const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)
-
     return (
         <NetflixHomeContainer>
             {
                 currentUser ?
                     (
                         <React.Fragment>
-                            <NetflixHeader randomBanner={banner[0]}/>
-                            <NetflixBody dataList={movieListSortedByPopular}/>
+                            <NetflixHeader/>
+                            <SuspenseComponent>
+                                <NetflixBody/>
+                            </SuspenseComponent>
                             <NetflixFooter/>
                         </React.Fragment>
                     ) : (

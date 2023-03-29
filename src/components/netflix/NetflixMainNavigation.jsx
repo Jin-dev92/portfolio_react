@@ -78,8 +78,7 @@ const NetflixMainNavigation = () => {
                     {
                         navIcon.map((item, index) => (
                             <ListItem key={`nav-item-${index}`}>
-                                <IconButton src={item.src} func={() => console.log('temp')} width={32} height={32}
-                                            component={item.component}/>
+                                <IconButton component={item.component}/>
                             </ListItem>
                         ))
                     }

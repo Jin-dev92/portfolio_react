@@ -2,16 +2,35 @@ import styled from "styled-components";
 import {FlexContainer} from "../common/layout/FlexContainer";
 import {MovieListComponent} from "./MovieListComponent";
 import React from "react";
+import AutoPlayVideoComponents from "./AutoPlayVideoComponents";
+import {useQuery} from "react-query";
+import {getPopularMovieList} from "../../api/api";
 
 const NetflixBodyContainer = styled(FlexContainer)`
-    margin-block-start: 5vh;
-  
+  & > .video-container {
+    margin-block-end: 5vh;
+  }
+  margin-block-end: 5vh;
 `
-const NetflixBody = ({dataList}) => {
+const NetflixBody = () => {
+    const [page, setPage] = React.useState(1)
+    const config = {
+        params: {
+            page: page,
+            region: 'KR'
+        }
+    }
+
+    const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
+    const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
+    const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)
+
     return (
         <NetflixBodyContainer>
-            {/*<h1>현재 공사 중 입니다. 👷</h1>*/}
-            <MovieListComponent dataList={dataList} title={'인기 순 추천'}/>
+            <FlexContainer className={'video-container'}>
+                <AutoPlayVideoComponents banner={banner[0]}/>
+            </FlexContainer>
+            <MovieListComponent dataList={movieListSortedByPopular} title={'인기 순 추천'} index={1}/>
         </NetflixBodyContainer>
     )
 }

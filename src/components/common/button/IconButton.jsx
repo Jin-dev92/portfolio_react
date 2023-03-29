@@ -5,13 +5,9 @@ const StyledButton = styled.button`
 `
 
 
-export const IconButton = ({src, func, width, height, component}) => {
-    const onClickHandler = (event) => {
-        event.preventDefault()
-        if (func) func()
-    }
+export const IconButton = ({component}) => {
     return (
-        <StyledButton onClick={onClickHandler}>
+        <StyledButton>
             {component}
         </StyledButton>
     )
