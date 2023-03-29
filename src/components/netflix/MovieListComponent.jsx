@@ -3,13 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import {FlexContainer} from "../common/layout/FlexContainer";
 
-
 const ListComponent = styled.ul`
   display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: hidden;
 `
 const Wrapper = styled(FlexContainer)`
+  //box-sizing: border-box;
 `
 const ListTitle = styled.p`
   font-size: 1.4vw;
@@ -29,7 +28,6 @@ export const MovieListComponent = ({title, dataList}) => {
                         </li>
                     ))
                 }
-                <li></li>
             </ListComponent>
         </Wrapper>
     )
