@@ -5,8 +5,8 @@ import styled from "styled-components";
 import React from 'react';
 import {NetflixLogo} from "./NetflixLogo";
 import {IconButton} from "../common/button/IconButton";
-import {ReactComponent as NotificationIcon} from "../../assets/svg/notification.svg";
-import {ReactComponent as SearchIcon} from "../../assets/svg/search.svg";
+import {ReactComponent as NotificationIcon} from "../../assets/svg/icons/notification.svg";
+import {ReactComponent as SearchIcon} from "../../assets/svg/icons/search.svg";
 
 const StyledAnchor = styled.a`
   text-decoration: none;

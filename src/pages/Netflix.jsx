@@ -6,6 +6,7 @@ import {UserListComponent} from "../components/netflix/UserListComponent";
 import {useSelector} from "react-redux";
 import NetflixBody from "../components/netflix/NetflixBody";
 import NetflixHeader from "../components/netflix/NetflixHeader";
+import NetflixFooter from "../components/netflix/NetflixFooter";
 
 
 const NetflixHomeContainer = styled.main`
@@ -22,6 +23,7 @@ const Netflix = () => {
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
     const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
     const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)
+
     return (
         <NetflixHomeContainer>
             {
@@ -30,6 +32,7 @@ const Netflix = () => {
                         <React.Fragment>
                             <NetflixHeader randomBanner={banner[0]}/>
                             <NetflixBody dataList={movieListSortedByPopular}/>
+                            <NetflixFooter/>
                         </React.Fragment>
                     ) : (
                         <UserListComponent/>

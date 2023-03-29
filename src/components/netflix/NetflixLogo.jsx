@@ -15,7 +15,7 @@ export const NetflixLogo = () => {
 
     return (
         <Wrapper>
-            <IconButton func={onClickHandler} component={<StyledImage src={'/images/icons/netflix/netflix_logo.png'}/>}/>
+            {/*<IconButton func={onClickHandler} component={<StyledImage src={'/images/icons/netflix/netflix_logo.png'}/>}/>*/}
         </Wrapper>
     )
 }
