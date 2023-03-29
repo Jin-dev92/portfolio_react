@@ -1,13 +1,11 @@
-import {FlexContainer} from "../components/common/layout/FlexContainer";
 import {useQuery} from "react-query";
 import {getPopularMovieList} from "../api/api";
 import React from 'react';
 import styled from "styled-components";
 import {UserListComponent} from "../components/netflix/UserListComponent";
 import {useSelector} from "react-redux";
-import {MovieListComponent} from "../components/netflix/MovieListComponent";
-import AutoPlayVideoComponents from "../components/netflix/AutoPlayVideoComponents";
-import NetflixMainNavigation from "../components/netflix/NetflixMainNavigation";
+import NetflixBody from "../components/netflix/NetflixBody";
+import NetflixHeader from "../components/netflix/NetflixHeader";
 
 
 const NetflixHomeContainer = styled.main`
@@ -19,9 +17,6 @@ const config = {
         region: 'KR'
     }
 }
-const NetflixBodyContainer = styled(FlexContainer)`
-    padding: 0 5vw
-`
 const Netflix = () => {
     const currentUser = useSelector(state => state.userSlice.currentUser)
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
@@ -32,16 +27,10 @@ const Netflix = () => {
             {
                 currentUser ?
                     (
-                        <>
-                            <NetflixMainNavigation/>
-                            <FlexContainer>
-                                <AutoPlayVideoComponents banner={banner[0]}/>
-                            </FlexContainer>
-                            <NetflixBodyContainer>
-                                <h1>현재 공사 중 입니다. 👷</h1>
-                                <MovieListComponent dataList={movieListSortedByPopular} title={'인기 순 추천'}/>
-                            </NetflixBodyContainer>
-                        </>
+                        <React.Fragment>
+                            <NetflixHeader randomBanner={banner[0]}/>
+                            <NetflixBody dataList={movieListSortedByPopular}/>
+                        </React.Fragment>
                     ) : (
                         <UserListComponent/>
                     )

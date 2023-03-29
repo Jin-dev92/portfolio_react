@@ -18,6 +18,7 @@ function App() {
     const setContents = (value) => {
         contents.current = value
     }
+    // console.log(process.env)
     return (
         <MainContainer>
             {

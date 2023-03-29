@@ -54,9 +54,9 @@ const NetflixMainNavigation = () => {
             <Navigation>
                 <List itemAlign={'row'}>
                     {/* @todo 컴포넌트로 빼야함 */}
-                    <StyledListItem>
-                        <NetflixLogo/>
-                    </StyledListItem>
+                    {/*<StyledListItem>*/}
+                    {/*    <NetflixLogo/>*/}
+                    {/*</StyledListItem>*/}
                     <StyledListItem>
                         <StyledAnchor><p>홈</p></StyledAnchor>
                     </StyledListItem>

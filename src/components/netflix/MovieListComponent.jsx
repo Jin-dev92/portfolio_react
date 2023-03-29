@@ -10,7 +10,6 @@ const ListComponent = styled.ul`
   overflow-y: hidden;
 `
 const Wrapper = styled(FlexContainer)`
-  width: 100%;
 `
 const ListTitle = styled.p`
   font-size: 1.4vw;
@@ -30,6 +29,7 @@ export const MovieListComponent = ({title, dataList}) => {
                         </li>
                     ))
                 }
+                <li></li>
             </ListComponent>
         </Wrapper>
     )
