@@ -12,7 +12,8 @@ const NetflixHomeContainer = styled.main`
   height: 100vh;
 `
 const Netflix = () => {
-    const currentUser = useSelector(state => state.userSlice.currentUser)
+    const currentUser =
+        useSelector(state => state.userSlice.currentUser)
     return (
         <NetflixHomeContainer>
             {

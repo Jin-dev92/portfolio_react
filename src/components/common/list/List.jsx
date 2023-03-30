@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const List = styled.ul`
   list-style: none;
-  //padding-inline-start: 10px;
 
   & li {
     float: ${props => props?.itemAlign === 'row' ? 'left' : undefined};

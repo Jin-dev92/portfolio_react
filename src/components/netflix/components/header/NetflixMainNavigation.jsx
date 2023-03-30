@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from 'react';
-import {useSelector} from "react-redux";
 import {HeaderRightSideNav} from "./HeaderRightSideNav";
 import {HeaderLeftSideNav} from "./HeaderLeftSideNav";
 
@@ -26,8 +25,6 @@ const StyledWrapper = styled.div`
   }
 `
 const NetflixMainNavigation = () => {
-    const currentUser = useSelector(state => state.userSlice.currentUser)
-    console.log(currentUser)
     return (
         <StyledWrapper>
             <HeaderLeftSideNav/>

@@ -21,7 +21,7 @@ export const UserComponent = ({user}) => {
     }
     return (
         <Wrapper onClick={onClickHandler}>
-            <ImageWrapper>
+            <ImageWrapper width={'10vw'} height={'10vw;'}>
                 <StyledImageComponent src={src} className={'profile_image'}/>
             </ImageWrapper>
             <p className={'profile_name'}>{name}</p>

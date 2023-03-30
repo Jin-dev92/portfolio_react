@@ -7,13 +7,17 @@ import {ReactComponent as NotificationIcon} from "../../../../assets/svg/icons/n
 import {ReactComponent as SearchIcon} from "../../../../assets/svg/icons/search.svg";
 
 import React from "react";
+import {HeaderProfileDropDown} from "./HeaderProfileDropDown";
 
 const StyledRightSideNav = styled(Navigation)`
+  & .header_profile {
+      margin-inline-start: 10px;
+  }
 `
 
 const navIcon = [
-    {src: '/images/icons/netflix/search.svg', component: <NotificationIcon width={32} height={32} fill={'white'}/>},
-    {src: '/images/icons/netflix/notification.svg', component: <SearchIcon width={32} height={32} fill={'white'}/>},
+    {src: '/images/icons/netflix/notification.svg', component: <SearchIcon width={24} height={24} fill={'white'}/>},
+    {src: '/images/icons/netflix/search.svg', component: <NotificationIcon width={24} height={24} fill={'white'}/>},
 ]
 
 export const HeaderRightSideNav = () => {
@@ -27,6 +31,9 @@ export const HeaderRightSideNav = () => {
                         </ListItem>
                     ))
                 }
+                <ListItem className={`nav-item-${navIcon.length} header_profile`}>
+                    <HeaderProfileDropDown/>
+                </ListItem>
             </List>
         </StyledRightSideNav>
     )
