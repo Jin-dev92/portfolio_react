@@ -1,8 +1,6 @@
-import {useQuery} from "react-query";
-import {getPopularMovieList} from "../api/api";
 import React from 'react';
 import styled from "styled-components";
-import {UserListComponent} from "../components/netflix/UserListComponent";
+import {UserListComponent} from "../components/netflix/components/UserListComponent";
 import {useSelector} from "react-redux";
 import NetflixBody from "../components/netflix/NetflixBody";
 import NetflixHeader from "../components/netflix/NetflixHeader";
@@ -20,13 +18,12 @@ const Netflix = () => {
             {
                 currentUser ?
                     (
-                        <React.Fragment>
+                        <SuspenseComponent>
                             <NetflixHeader/>
-                            <SuspenseComponent>
-                                <NetflixBody/>
-                            </SuspenseComponent>
+                            <NetflixBody/>
                             <NetflixFooter/>
-                        </React.Fragment>
+                        </SuspenseComponent>
+
                     ) : (
                         <UserListComponent/>
                     )

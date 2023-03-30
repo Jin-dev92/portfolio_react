@@ -23,4 +23,4 @@ export const userSlice = createSlice({
     },
 });
 
-export const {getUserList, setUserList, getCurrentUser, setCurrentUser} = userSlice.actions
+export const {setUserList, setCurrentUser} = userSlice.actions

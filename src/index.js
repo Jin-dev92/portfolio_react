@@ -8,9 +8,10 @@ import {ReactQueryDevtools} from "react-query/devtools";
 import {ConfigProvider, theme} from "antd";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Netflix from "./pages/Netflix";
-import {SuspenseComponent} from "./components/common/SuspenseComponent";
 import {Provider} from "react-redux";
 import {RTKStore} from "./redux/store";
+import NetflixMovieDetail from "./pages/NetflixMovieDetail";
+import {SuspenseComponent} from "./components/common/SuspenseComponent";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient({
@@ -39,9 +40,8 @@ root.render(
                 <BrowserRouter>
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
-                        <Route path={"/netflix"} element={<Netflix/>}/>
-                        {/*<Route path={"/netflix/:id"} element={<SuspenseComponent children={<Netflix/>}/>}/>*/}
-                        {/*    useParams*/}
+                        <Route path={"/netflix"} element={<SuspenseComponent children={<Netflix/>}/>}/>
+                        {/*<Route path={"/netflix/:id"} element={<NetflixMovieDetail/>}/>*/}
                     </Routes>
                 </BrowserRouter>
 

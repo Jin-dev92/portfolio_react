@@ -88,6 +88,7 @@ const NetflixFooter = () => {
                 <div>회사 정보</div>
                 <div>문의 하기</div>
             </InformationWrapper>
+            update Date : 23.03.29
         </Wrapper>
     )
 }

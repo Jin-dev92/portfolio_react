@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {ImageWrapper} from "../common/image/ImageWrapper";
-import {ImageComponent} from "../common/image/ImageComponent";
+import {ImageWrapper} from "../../common/image/ImageWrapper";
+import {ImageComponent} from "../../common/image/ImageComponent";
 import {useDispatch} from "react-redux";
-import {setCurrentUser} from "../../redux/slices/userSlice";
+import {setCurrentUser} from "../../../redux/slices/userSlice";
 
 const Wrapper = styled.div`
   display: flex;

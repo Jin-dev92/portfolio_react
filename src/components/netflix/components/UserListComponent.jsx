@@ -62,6 +62,7 @@ const userList = [
 export const UserListComponent = () => {
     return (
         <Wrapper>
+            <h4>해당 앱은 미완성 상태이며, 지속적으로 업데이트 중입니다.</h4>
             <h1>넷플릭스를 시청할 프로필을 선택하세요.</h1>
             <ul>
                 {

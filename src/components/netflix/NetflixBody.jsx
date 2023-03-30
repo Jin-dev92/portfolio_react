@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {FlexContainer} from "../common/layout/FlexContainer";
-import {MovieListComponent} from "./MovieListComponent";
+import {MovieListComponent} from "./components/MovieListComponent";
 import React from "react";
-import AutoPlayVideoComponents from "./AutoPlayVideoComponents";
+import AutoPlayVideoComponents from "./components/AutoPlayVideoComponents";
 import {useQuery} from "react-query";
 import {getPopularMovieList} from "../../api/api";
 
@@ -23,12 +23,12 @@ const NetflixBody = () => {
 
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
     const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
-    const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)
+    const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)[0]
 
     return (
         <NetflixBodyContainer>
             <FlexContainer className={'video-container'}>
-                <AutoPlayVideoComponents banner={banner[0]}/>
+                <AutoPlayVideoComponents banner={banner}/>
             </FlexContainer>
             <MovieListComponent dataList={movieListSortedByPopular} title={'인기 순 추천'} index={1}/>
         </NetflixBodyContainer>

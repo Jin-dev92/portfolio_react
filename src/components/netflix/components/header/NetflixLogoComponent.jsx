@@ -12,7 +12,7 @@ const Logo = styled.div`
   max-height: 100%;
 `
 const Wrapper = styled.div``
-export const NetflixLogo = () => {
+export const NetflixLogoComponent = () => {
     const clickHandler = (event) => {
         event.preventDefault();
 
