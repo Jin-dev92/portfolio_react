@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   top: 30%;
   left: 5%;
   width: 40vw;
+  font-size: 1.2vw;
 `
 const StyledArticle = styled.article`
   //position: absolute;

@@ -8,7 +8,11 @@ import {ListItem} from "../../../common/list/ListItem";
 const StyledAnchor = styled.a`
   text-decoration: none;
   cursor: pointer;
-  `
+
+  & p {
+    font-size: 0.8vw;
+  }
+`
 
 const StyledListItem = styled(ListItem)`
   padding: 0 10px;
