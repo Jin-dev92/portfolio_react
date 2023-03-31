@@ -38,28 +38,32 @@ const iconList = [
         component: <GitHubIcon fill={'white'} width={32} height={32}/>,
         func: () => {
 
-        }
+        },
+        to : 'https://github.com/Jin-dev92',
     },
     {
         src: '/svg/icons/youtube.svg',
         component: <YoutubeIcon fill={'white'} width={32} height={32}/>,
         func: () => {
 
-        }
+        },
+        to : null,
     },
     {
         src: '/svg/icons/facebook.svg',
         component: <FaceBookIcon fill={'white'} width={32} height={32}/>,
         func: () => {
 
-        }
+        },
+        to : null,
     },
     {
         src: '/svg/icons/instagram.svg',
         component: <InstagramIcon fill={'white'} width={32} height={32}/>,
         func: () => {
 
-        }
+        },
+        to : null,
     },
 ]
 const NetflixFooter = () => {
@@ -69,7 +73,7 @@ const NetflixFooter = () => {
                 {
                     iconList.map((icon, index) => (
                         <li key={`footer-icon-${index}`}>
-                            <IconButton children={icon.component}/>
+                            <IconButton children={icon.component} to={icon.to}/>
                         </li>
                     ))
                 }

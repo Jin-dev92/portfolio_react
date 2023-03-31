@@ -6,9 +6,16 @@ const StyledButton = styled.button`
 `
 
 
-export const IconButton = ({children, to}) => {
+export const IconButton = ({children, to, func}) => {
+    const clickHandler = (event) => {
+        if (!to) {
+            event.preventDefault();
+        } else {
+            if (func) func()
+        }
+    }
     return (
-        <StyledButton>
+        <StyledButton onClick={clickHandler}>
             <Link to={to || '#'}>
                 {children}
             </Link>
