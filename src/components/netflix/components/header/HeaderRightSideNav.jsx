@@ -10,6 +10,7 @@ import React from "react";
 import {HeaderProfileDropDown} from "./HeaderProfileDropDown";
 
 const StyledRightSideNav = styled(Navigation)`
+  line-height: 1.5vh;
   & .header_profile {
       margin-inline-start: 10px;
   }

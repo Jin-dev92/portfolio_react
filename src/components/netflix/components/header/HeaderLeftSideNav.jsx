@@ -4,19 +4,16 @@ import {NetflixLogoComponent} from "./NetflixLogoComponent";
 import React from "react";
 import styled from "styled-components";
 import {ListItem} from "../../../common/list/ListItem";
+import {IconButton} from "../../../common/button/IconButton";
 
-const StyledAnchor = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-
-  & p {
-    font-size: 0.8vw;
-  }
-`
 
 const StyledListItem = styled(ListItem)`
   padding: 0 10px;
   font-weight: normal;
+  line-height: 1.5vh;
+  & p {
+    font-size: 0.8vw;
+  }
 `
 
 export const HeaderLeftSideNav = () => {
@@ -27,19 +24,19 @@ export const HeaderLeftSideNav = () => {
                     <NetflixLogoComponent/>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledAnchor><p>홈</p></StyledAnchor>
+                    <IconButton><p>홈</p></IconButton>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledAnchor><p>시리즈</p></StyledAnchor>
+                    <IconButton><p>시리즈</p></IconButton>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledAnchor><p>영화</p></StyledAnchor>
+                    <IconButton><p>영화</p></IconButton>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledAnchor><p>NEW! 요즘 대세 콘텐츠</p></StyledAnchor>
+                    <IconButton><p>NEW! 요즘 대세 콘텐츠</p></IconButton>
                 </StyledListItem>
                 <StyledListItem>
-                    <StyledAnchor><p>언어별로 찾아보기</p></StyledAnchor>
+                    <IconButton><p>언어별로 찾아보기</p></IconButton>
                 </StyledListItem>
             </List>
         </Navigation>
