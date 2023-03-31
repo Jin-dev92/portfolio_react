@@ -23,12 +23,12 @@ const NetflixBody = () => {
 
     const {data} = useQuery('getPopularMovieList', () => getPopularMovieList(config))
     const movieListSortedByPopular = data.data.results.sort((a, b) => b.popularity - a.popularity)
-    const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)[0]
+    // const banner = movieListSortedByPopular.sort(() => Math.random() - 0.5)[0]
 
     return (
         <NetflixBodyContainer>
             <FlexContainer className={'video-container'}>
-                <AutoPlayVideoComponents banner={banner}/>
+                <AutoPlayVideoComponents banner={movieListSortedByPopular[0]}/>
             </FlexContainer>
             <MovieListComponent dataList={movieListSortedByPopular} title={'인기 순 추천'} index={1}/>
         </NetflixBodyContainer>

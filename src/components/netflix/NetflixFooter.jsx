@@ -28,7 +28,7 @@ const InformationWrapper = styled.div`
   width: 40vw;
   flex-wrap: wrap;
 
-  & > div {
+  & div {
     width: 10vw;
   }
 `

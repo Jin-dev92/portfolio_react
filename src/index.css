@@ -38,15 +38,10 @@ main {
 }
 
 p {
-    font-size: 1em;
+    font-size: 1vw;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.banner-title {
-    font-weight: bold;
-    font-size: 3em;
 }

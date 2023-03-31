@@ -10,11 +10,18 @@ const Wrapper = styled.div`
   z-index: 1000;
   top: 30%;
   left: 5%;
-  width: 40vw;
+  width: 100vw;
   font-size: 1.2vw;
 `
-
-const StyledArticle = styled.article``
+const ContentWrapper = styled.div`
+    width: 40vw;
+`
+const StyledArticle = styled.article`
+  .banner-title {
+    font-weight: bold;
+    font-size: 2.5vw;
+  }
+`
 const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
@@ -46,29 +53,43 @@ const ButtonWrapper = styled.div`
     margin-inline-end: 10px;
   }
 `
+// const StyledAside = styled.aside`
+//   display: flex;
+//   flex-direction: row;
+//   position: absolute;
+//   top: 50%;
+//   right: 8%;
+// `
 export const VideoComponentOverBanner = ({banner}) => {
     const {title, overview} = banner
     return (
         <Wrapper>
-            <StyledArticle>
-                <p className={'banner-title'}>{title}</p>
-                <p>{overview}</p>
-            </StyledArticle>
-            <StyledSection>
-                <IconButton>
-                    <ButtonWrapper role={'play'}>
-                        <PlayIcon width={'1.5vw'} height={'1.5vw'} fill={'black'} className={'banner-icon'}/>
-                        <p>재생</p>
-                    </ButtonWrapper>
-                </IconButton>
-                <IconButton>
-                    <ButtonWrapper role={'info'}>
-                        <InformationIcon width={'1.5vw'} height={'1.5vw'} fill={'white'}
-                                         className={'banner-icon'}/>
-                        <p>상세 보기</p>
-                    </ButtonWrapper>
-                </IconButton>
-            </StyledSection>
+            <ContentWrapper>
+                <StyledArticle>
+                    <p className={'banner-title'}>{title}</p>
+                    <p>{overview}</p>
+                </StyledArticle>
+                <StyledSection>
+                    <IconButton>
+                        <ButtonWrapper role={'play'}>
+                            <PlayIcon width={'1.5vw'} height={'1.5vw'} fill={'black'} className={'banner-icon'}/>
+                            <p>재생</p>
+                        </ButtonWrapper>
+                    </IconButton>
+                    <IconButton>
+                        <ButtonWrapper role={'info'}>
+                            <InformationIcon width={'1.5vw'} height={'1.5vw'} fill={'white'}
+                                             className={'banner-icon'}/>
+                            <p>상세 보기</p>
+                        </ButtonWrapper>
+                    </IconButton>
+                </StyledSection>
+            </ContentWrapper>
+            {/*<StyledAside>*/}
+            {/*    <IconButton>*/}
+            {/*        테스트*/}
+            {/*    </IconButton>*/}
+            {/*</StyledAside>*/}
         </Wrapper>
     )
 }
