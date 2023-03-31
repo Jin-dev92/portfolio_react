@@ -1,24 +1,17 @@
 import React from 'react';
 import NumberItem from "./NumberItem";
+import styled from "styled-components";
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  height: 20vw;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  cursor: pointer;
+`
 const NumberPuzzle = () => {
-    const puzzleContainerStyle = {
-        display: 'grid',
-        gridGap: 4,
-        gridTemplateColumns: 'repeat(3, minmax(auto, 1fr))',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        width: 320,
-        height: 320,
-        margin: '0 auto'
-    }
-    const labelStyle = {
-        textAlign: 'center',
-        fontSize: 20,
-        fontWeight: 'bold',
-        color:'red',
-        marginTop: 8,
-    }
     const [numberState, setNumberState] = React.useState(() => {
             let ar = [1, 2, 3, 4, 5, 6, 7, 8, null]
             ar.sort(() => Math.random() - 0.5)
@@ -31,24 +24,21 @@ const NumberPuzzle = () => {
     )
     const [count, setCount] = React.useState(0)
     return (
-        <div>
-            <div style={puzzleContainerStyle}>
-                {
-                    numberState.map((numberRow) => {
-                        return (
-                            numberRow.map((number, idx) =>
-                                <NumberItem number={number} numberState={numberState}
-                                            key={'numberItem_' + idx}
-                                            setCount={setCount}
-                                            count={count}
-                                            setNumberState={setNumberState}/>
-                            )
+        <Wrapper>
+            {
+                numberState.map((numberRow) => {
+                    return (
+                        numberRow.map((number, idx) =>
+                            <NumberItem number={number} numberState={numberState}
+                                        key={'numberItem_' + idx}
+                                        setCount={setCount}
+                                        count={count}
+                                        setNumberState={setNumberState}/>
                         )
-                    })
-                }
-            </div>
-            <div style={labelStyle}>{count}</div>
-        </div>
+                    )
+                })
+            }
+        </Wrapper>
     )
 }
 

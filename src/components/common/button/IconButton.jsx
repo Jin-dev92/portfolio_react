@@ -5,10 +5,10 @@ const StyledButton = styled.button`
 `
 
 
-export const IconButton = ({component}) => {
+export const IconButton = ({children}) => {
     return (
         <StyledButton>
-            {component}
+            {children}
         </StyledButton>
     )
 }

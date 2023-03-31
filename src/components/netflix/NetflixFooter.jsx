@@ -69,7 +69,7 @@ const NetflixFooter = () => {
                 {
                     iconList.map((icon, index) => (
                         <li key={`footer-icon-${index}`}>
-                            <IconButton component={icon.component}/>
+                            <IconButton children={icon.component}/>
                         </li>
                     ))
                 }

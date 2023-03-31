@@ -16,8 +16,8 @@ const StyledRightSideNav = styled(Navigation)`
 `
 
 const navIcon = [
-    {src: '/images/icons/netflix/notification.svg', component: <SearchIcon width={24} height={24} fill={'white'}/>},
-    {src: '/images/icons/netflix/search.svg', component: <NotificationIcon width={24} height={24} fill={'white'}/>},
+    {src: '/images/icons/netflix/notification.svg', component: <SearchIcon width={'1.5vw'} height={'1.5vw'} fill={'white'}/>},
+    {src: '/images/icons/netflix/search.svg', component: <NotificationIcon width={'1.5vw'} height={'1.5vw'} fill={'white'}/>},
 ]
 
 export const HeaderRightSideNav = () => {
@@ -27,7 +27,7 @@ export const HeaderRightSideNav = () => {
                 {
                     navIcon.map((item, index) => (
                         <ListItem key={`nav-item-${index}`}>
-                            <IconButton component={item.component}/>
+                            <IconButton children={item.component}/>
                         </ListItem>
                     ))
                 }

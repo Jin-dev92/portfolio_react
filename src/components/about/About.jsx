@@ -24,13 +24,7 @@ const items = [
         )
     }
 ]
-const indexFontStyle = {
-    fontWeight: 'bold',
-    fontSize: 24
-}
-const innerTextStyle = {
-    fontSize: 20
-}
+
 const About = () => {
     const [isOpen, setIsOpen] = React.useState(false)
     const currentAnchor = React.useRef(null)
@@ -43,9 +37,9 @@ const About = () => {
 
 
     return (
-        <div style={innerTextStyle}>
+        <div>
             <ContentsWrapper>
-                <Divider orientation={"left"} orientationMargin style={indexFontStyle}>간단 소개</Divider>
+                <Divider orientation={"left"} orientationMargin>간단 소개</Divider>
                 <p>3년차 주니어 풀스택 개발자 김의진 입니다.</p>
                 <p>새로 배우는 것에 대한 이해도가 높으며 코드 리뷰를 즐겨 합니다.</p>
                 <p>코드의 가독성을 중요시 합니다.</p>
@@ -53,7 +47,7 @@ const About = () => {
                 <p>또한 배우는 것을 즐기며, 개인의 성장에 노력을 많이 합니다.</p>
             </ContentsWrapper>
             <ContentsWrapper>
-                <Divider orientation={"left"} orientationMargin style={indexFontStyle}>프론트 엔드</Divider>
+                <Divider orientation={"left"} orientationMargin>프론트 엔드</Divider>
                 <ul>
                     <li>Javascript, ES6+ 표준 스펙을 활용한 UI 개발 경험</li>
                     <li>REST API를 활용한 WEB 개발 경험</li>
@@ -85,7 +79,7 @@ const About = () => {
                 </ul>
             </ContentsWrapper>
             <ContentsWrapper>
-                <Divider orientation={"left"} orientationMargin style={indexFontStyle}>백엔드</Divider>
+                <Divider orientation={"left"} orientationMargin>백엔드</Divider>
                 <ul>
                     <li>Spring Boot 프레임 워크를 사용한 REST API 개발과 J2EE 패턴을 사용한 프로젝트 설계 , 팀 프로젝트 경험 (JAVA)</li>
                     <li>django 프레임 워크를 사용한 REST API 개발 (python) 및 프로젝트 설계</li>
@@ -95,7 +89,7 @@ const About = () => {
                 </ul>
             </ContentsWrapper>
             <ContentsWrapper>
-                <Divider orientation={"left"} orientationMargin style={indexFontStyle}>기타</Divider>
+                <Divider orientation={"left"} orientationMargin>기타</Divider>
                 <ul>
                     <li>Localization 에 대한 경험</li>
                     <li>기획, 디자인 팀과 협업을 통한 서비스 개발 경험</li>
@@ -105,7 +99,7 @@ const About = () => {
                 </ul>
             </ContentsWrapper>
             <ContentsWrapper>
-                <Divider orientation={"left"} orientationMargin style={indexFontStyle}>링크</Divider>
+                <Divider orientation={"left"} orientationMargin>링크</Divider>
                 <Anchor
                     onClick={anchorClickHandler}
                     items={[

@@ -1,17 +1,18 @@
-const NumberItem = ({number, numberState, setNumberState, setCount, count}) => {
-    const itemStyle = {
-        display: 'grid',
-        width: 100,
-        height: 100,
-        backgroundColor: 'green',
-        textAlign: 'center',
-        alignItems: 'center',
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 45,
-        cursor: 'pointer',
-    }
+import styled from "styled-components";
 
+const NumberWrapper = styled.div`
+  width: 6vw;
+  height: 6vw;
+  line-height: 6vw;
+  background-color: ${props=>props.children ? 'orange' : 'transparent' };
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2vw;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: ${props=>props.children ? '10px 10px 5px 0 rgba(0,0,0,0.75)' : undefined };
+`
+const NumberItem = ({number, numberState, setNumberState, setCount, count}) => {
     const puzzleSize = 3
     const dx = [1, 0, -1, 0]
     const dy = [0, 1, 0, -1]
@@ -59,12 +60,9 @@ const NumberItem = ({number, numberState, setNumberState, setCount, count}) => {
     }
 
     return (
-        <div style={number ? itemStyle : {
-            ...itemStyle, backgroundColor: 'inherit', cursor: "auto",
-            // color:'red', fontSize: 16
-        }} onClick={clickHandler}>
+        <NumberWrapper onClick={clickHandler}>
             {number}
-        </div>
+        </NumberWrapper>
     )
 }
 
