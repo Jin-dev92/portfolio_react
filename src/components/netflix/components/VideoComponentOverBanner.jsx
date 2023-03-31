@@ -19,7 +19,7 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-block-start: 10px;
+  margin-block-start: 1vw;
   width: 25vw;
 `
 const ButtonWrapper = styled.div`
