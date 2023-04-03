@@ -3,29 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import {FlexContainer} from "../../common/layout/FlexContainer";
 import {Splide, SplideSlide} from '@splidejs/react-splide';
-// Default theme
 import '@splidejs/react-splide/css';
-// or other themes
-// import '@splidejs/react-splide/css/skyblue';
-// import '@splidejs/react-splide/css/sea-green';
-// or only core styles
-// import '@splidejs/react-splide/css/core';
-// import {ReactComponent as LeftArrowIcon} from "../../assets/svg/icons/left-arrow.svg";
-// import {ReactComponent as RightArrowIcon} from "../../assets/svg/icons/right-arrow.svg";
 
-// const ListComponent = styled.ul`
-//   display: flex;
-//   overflow: hidden;
-//   position: relative;
-//
-//   & > .list-nav {
-//     display: none;
-//   }
-//
-//   &:hover > .list-nav {
-//     display: block;
-//   }
-// `
 const Wrapper = styled(FlexContainer)`
   width: 100%;
 `
@@ -43,7 +22,7 @@ export const MovieListComponent = ({title, dataList, index}) => {
                 {
                     dataList.map((data, index) => (
                         <SplideSlide key={`movie_card_splide_slide_${index}`} >
-                            <MovieCardComponent data={data}/>
+                                <MovieCardComponent data={data}/>
                         </SplideSlide>
                     ))
                 }

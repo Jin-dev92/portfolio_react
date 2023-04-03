@@ -11,15 +11,12 @@ const Wrapper = styled.div`
   border-radius: 0 0 8px 8px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  &:hover {
-    //width: 25vw;
-    //transition: width;
+
+  & .card-info-wrapper {
+    display: none;
   }
 `
-const ImageWrapper = styled.div`
-
-`
+const ImageWrapper = styled.div``
 const MoreInfoWrapper = styled.div`
   width: 100%;
 
@@ -28,7 +25,7 @@ const MoreInfoWrapper = styled.div`
     flex-direction: row;
     list-style: none;
     align-items: center;
-    padding: 1vh 0;
+    padding: 2vh 0;
 
     & > li {
       border: 1px solid grey;
@@ -59,14 +56,13 @@ export const MovieCardComponent = ({data}) => {
     const rootURL = [process.env.REACT_APP_MOVIE_DB_IMAGE_ROOT, `w${defaultSize}`, backdrop_path].join('/')
     const onClickHandler = (event) => {
         event.preventDefault();
-
     }
     return (
         <Wrapper onClick={onClickHandler}>
             <ImageWrapper>
                 <img src={rootURL} alt=""/>
             </ImageWrapper>
-            <MoreInfoWrapper>
+            <MoreInfoWrapper className={'card-info-wrapper'}>
                 <ul className={'info_button_list'}>
                     <li>
                         <IconButton>
