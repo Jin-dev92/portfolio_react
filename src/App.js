@@ -9,7 +9,7 @@ import styled from "styled-components";
 const MainContainer = styled(FlexContainer)`
   background: url(${appData?.app_bg});
   width: 100vw;
-  height:100vh;
+  height: 100vh;
 `
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
                 appData.app_list.map((data, idx) => {
                     return !data.disabled ? (
                         <FolderIconButton src={data.src}
-                                          position={data.position}
+                                          position={{x: 25, y: 25 + 50 * idx}}
                                           key={`icon-button-${idx}`}
                                           name={data.name}
                                           id={data.id}
