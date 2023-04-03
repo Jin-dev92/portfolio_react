@@ -4,9 +4,25 @@ import About from "../../about/About";
 import Game from "../../game/Game";
 import DataChart from "../../dataChart/DataChart";
 import {SuspenseComponent} from "../SuspenseComponent";
-import {useNavigate, } from "react-router-dom";
+import {useNavigate,} from "react-router-dom";
+import styled from "styled-components";
 
 
+const Wrapper = styled.div`
+  width: ${props => props.size || '120px'};
+  height: ${props => props.size || '120px'};
+`
+const StyledText = styled.p`
+    text-align: center;
+`
+const StyledImage = styled.div`
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: ${props => props.size || '120px'};
+  height: ${props => props.size || '120px'};
+  cursor: pointer;
+`
 const FolderIconButton = ({draggable = true, size = 120, src, position, name, id, setOpen, setContents}) => {
     const navigate = useNavigate()
     const isDrag = React.useRef(false)
@@ -16,6 +32,7 @@ const FolderIconButton = ({draggable = true, size = 120, src, position, name, id
     const onDragStop = () => {
         isDrag.current = false
     }
+
     const getClassifiedData = (number) => { // 클릭한 아이콘에 맞는 데이터를 미리 세팅 해준다.
         switch (number) {
             case 1:
@@ -60,36 +77,14 @@ const FolderIconButton = ({draggable = true, size = 120, src, position, name, id
                 break
         }
     }
-
-    const imageStyle = {
-        backgroundImage: `url(${src})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        cursor: 'pointer',
-        width: size,
-        height: size,
-    }
-    const textStyle = {
-        width: size,
-        textAlign: 'center',
-        color: 'white',
-        marginBlockStart: '8px'
-    }
-    const wrapperStyle = {
-        width: size,
-        height: size,
-    }
-
     return (
-        <div style={wrapperStyle}>
             <Draggable scale={1} disabled={!draggable} defaultPosition={position} onStart={onDragStart}
                        onStop={onDragStop} onMouseDown={onClickHandler}>
-                <div>
-                    <div style={imageStyle}/>
-                    <div style={textStyle}>{name}</div>
-                </div>
+                <Wrapper>
+                    <StyledImage src={src}/>
+                    <StyledText>{name}</StyledText>
+                </Wrapper>
             </Draggable>
-        </div>
     )
 }
 
