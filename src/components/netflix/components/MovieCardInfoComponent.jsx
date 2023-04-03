@@ -6,16 +6,6 @@ import {ReactComponent as CheckIcon} from "../../../assets/svg/icons/check.svg";
 import {ReactComponent as LikeIcon} from "../../../assets/svg/icons/like.svg";
 import {ReactComponent as ArrowIcon} from "../../../assets/svg/icons/right-arrow.svg";
 
-const defaultSize = 300
-const Wrapper = styled.div`
-  width: 20vw;
-  border-radius: 0 0 8px 8px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 2;
-`
-const ImageWrapper = styled.div``
 const MoreInfoWrapper = styled.div`
   width: 100%;
   & > ul {
@@ -49,14 +39,8 @@ const MoreInfoWrapper = styled.div`
     }
   }
 `
-export const MovieLargeCardComponent = ({data}) => {
-    const {backdrop_path} = data
-    const rootURL = [process.env.REACT_APP_MOVIE_DB_IMAGE_ROOT, `w${defaultSize}`, backdrop_path].join('/')
+export const MovieCardInfoComponent = ({data}) => {
     return (
-        <Wrapper>
-            <ImageWrapper>
-                <img src={rootURL} alt=""/>
-            </ImageWrapper>
             <MoreInfoWrapper className={'card-info-wrapper'}>
                 <ul className={'info_button_list'}>
                     <li>
@@ -82,6 +66,5 @@ export const MovieLargeCardComponent = ({data}) => {
                     </li>
                 </ul>
             </MoreInfoWrapper>
-        </Wrapper>
     )
 }
