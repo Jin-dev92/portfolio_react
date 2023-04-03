@@ -9,8 +9,8 @@ import styled from "styled-components";
 
 
 const Wrapper = styled.div`
-  width: ${props => props.size || '120px'};
-  height: ${props => props.size || '120px'};
+  width: ${props => props.size || '10vw'};
+  height: ${props => props.size || '10vw'};
 `
 const StyledText = styled.p`
     text-align: center;
@@ -19,11 +19,11 @@ const StyledImage = styled.div`
   background-image: url(${props => props.src});
   background-size: cover;
   background-repeat: no-repeat;
-  width: ${props => props.size || '120px'};
-  height: ${props => props.size || '120px'};
+  width: ${props => props.size || '10vw'};
+  height: ${props => props.size || '10vw'};
   cursor: pointer;
 `
-const FolderIconButton = ({draggable = true, size = 120, src, position, name, id, setOpen, setContents}) => {
+const FolderIconButton = ({draggable = true, src, position, name, id, setOpen, setContents}) => {
     const navigate = useNavigate()
     const isDrag = React.useRef(false)
     const onDragStart = () => {
