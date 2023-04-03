@@ -9,8 +9,8 @@ import styled from "styled-components";
 
 
 const Wrapper = styled.div`
-  width: ${props => props.size || '10vw'};
-  height: ${props => props.size || '10vw'};
+  width: ${props => props.size || '6vw'};
+  height: ${props => props.size || '6vw'};
 `
 const StyledText = styled.p`
     text-align: center;
@@ -19,8 +19,9 @@ const StyledImage = styled.div`
   background-image: url(${props => props.src});
   background-size: cover;
   background-repeat: no-repeat;
-  width: ${props => props.size || '10vw'};
-  height: ${props => props.size || '10vw'};
+  background-position:center;
+  width: ${props => props.size || '6vw'};
+  height: ${props => props.size || '6vw'};
   cursor: pointer;
 `
 const FolderIconButton = ({draggable = true, src, position, name, id, setOpen, setContents}) => {
