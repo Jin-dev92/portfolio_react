@@ -8,7 +8,7 @@ import {IconButton} from "../../../common/button/IconButton";
 
 
 const StyledListItem = styled(ListItem)`
-  padding: 0 10px;
+  padding: 0 1vw;
   font-weight: normal;
   line-height: 1.5vh;
   & p {

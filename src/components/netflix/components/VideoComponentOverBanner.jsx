@@ -14,12 +14,18 @@ const Wrapper = styled.div`
   font-size: 1.2vw;
 `
 const ContentWrapper = styled.div`
-    width: 40vw;
+  width: 40vw;
 `
 const StyledArticle = styled.article`
   .banner-title {
     font-weight: bold;
     font-size: 2.5vw;
+  }
+
+  @media (max-width: 768px) {
+    .banner-overview {
+      display: none;
+    }
   }
 `
 const StyledSection = styled.section`
@@ -38,6 +44,9 @@ const ButtonWrapper = styled.div`
   border: 1px solid transparent;
   border-radius: 5px;
   font-weight: bold;
+  max-width: 200px;
+  min-width: 100px;
+  max-height: 100px;
 
   &[role='play'] {
     color: black;
@@ -67,7 +76,7 @@ export const VideoComponentOverBanner = ({banner}) => {
             <ContentWrapper>
                 <StyledArticle>
                     <p className={'banner-title'}>{title}</p>
-                    <p>{overview}</p>
+                    <p className={'banner-overview'}>{overview}</p>
                 </StyledArticle>
                 <StyledSection>
                     <IconButton>
