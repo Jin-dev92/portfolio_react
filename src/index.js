@@ -10,7 +10,6 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Netflix from "./pages/Netflix";
 import {Provider} from "react-redux";
 import {RTKStore} from "./redux/store";
-import NetflixMovieDetail from "./pages/NetflixMovieDetail";
 import {SuspenseComponent} from "./components/common/SuspenseComponent";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

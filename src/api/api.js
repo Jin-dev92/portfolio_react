@@ -37,3 +37,4 @@ export const getMovieDetailById = (config) => MovieAPI.get('/movie/searchMovieIn
 export const getSearchMovieByQuery = (config) => THEMovieDBAPI.get(`/search/movie`, config)
 export const getPopularMovieList = (config) => THEMovieDBAPI.get(`/movie/popular`, config)
 export const getTopRatedMovieList = (config) => THEMovieDBAPI.get(`/movie/top_rated`, config)
+export const getGenresMovieList = (config) => THEMovieDBAPI.get(`/genre/movie/list`, config)

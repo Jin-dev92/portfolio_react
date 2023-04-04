@@ -4,7 +4,6 @@ import styled from "styled-components";
 import {FlexContainer} from "../../common/layout/FlexContainer";
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import {MovieCardInfoComponent} from "./MovieCardInfoComponent";
 
 const Wrapper = styled(FlexContainer)`
   width: 100%;
@@ -22,7 +21,7 @@ export const MovieListComponent = ({title, dataList, index}) => {
             <Splide options={{perPage: 7, pagination: false, type: 'loop', lazyLoad: true}}>
                 {
                     dataList.map((data, index) => (
-                        <SplideSlide key={`movie_card_splide_slide_${index}`} className={'test'}>
+                        <SplideSlide key={`movie_card_splide_slide_${index}`}>
                             <MovieCardComponent data={data}/>
                             {/*<MovieCardInfoComponent/>*/}
                         </SplideSlide>
