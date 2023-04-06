@@ -4,6 +4,7 @@ const initialState = {
     userList: [],
     currentUser: null,
 }
+// 테스트용 주석
 export const userSlice = createSlice({
     name: 'user',
     initialState: initialState,
@@ -11,15 +12,9 @@ export const userSlice = createSlice({
         setUserList: (state, action) => {
             state.userList = action.payload.userList
         },
-        // getUserList: (state, action) => {
-        //     return state.userList
-        // },
         setCurrentUser: (state, action) => {
             state.currentUser = action.payload.user
         },
-        // getCurrentUser: (state, action) => {
-        //     return state.currentUser
-        // },
     },
 });
 
