@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import LoadingCard from "./card/LoadingCard";
 import {PrecipitationCategory, WeatherCategory, WindCategory} from "./card/constant/weatherCategory";
 import {DataType} from "./card/constant/dataType";
+
 const DataChart = () => {
     const releaseTime = ["0200", "0500", "0800", "1100", "1400", "1700", "2000", "2300"]
     const currentTime = dayjs().clone().format("HH").concat("00")
@@ -28,12 +29,7 @@ const DataChart = () => {
         },
     }
 
-    // const [data, setData] = React.useState()
-    const {isLoading, data} = useQuery("getWeather", () => getCurrentWeather(config), {
-        onSuccess: (data) => {
-
-        },
-    })
+    const {isLoading, data} = useQuery("getWeather", () => getCurrentWeather(config))
 
     return (
         <LoadingCard loading={isLoading} data={data}/>

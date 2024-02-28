@@ -29,7 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev:build": "react-scripts build"
+    "dev:build": "react-scripts build",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "node_modules-rm": "rm -rf ./**/node_modules ./node_modules ./yarn.lock ./package-lock.json"
   },
   "eslintConfig": {
     "extends": [
@@ -53,9 +55,11 @@
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.2",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-react-app": "^7.0.1",
     "typescript": "^5.3.3",
     "video.js": "^8.0.4",
+    "prettier": "^3.2.5",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },

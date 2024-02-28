@@ -1,0 +1,14 @@
+{
+  "singleQuote": false,
+  "trailingComma": "all",
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "plugins": [
+    "eslint-config-prettier"
+  ],
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "endOfLine": "auto"
+}
