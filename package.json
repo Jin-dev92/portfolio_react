@@ -4,36 +4,24 @@
   "homepage": "https://d5gtzgnscq6yj.cloudfront.net",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^5.0.1",
-    "@headlessui/react": "^1.7.13",
-    "@heroicons/react": "^2.0.16",
     "@lottiefiles/react-lottie-player": "^3.5.2",
     "@reduxjs/toolkit": "^1.9.3",
     "@splidejs/react-splide": "^0.7.12",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "antd": "^5.1.7",
     "axios": "^1.3.2",
-    "buffer": "^6.0.3",
     "dayjs": "^1.11.7",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
     "react-error-boundary": "^4.0.1",
-    "react-intersection-observer": "^9.4.3",
-    "react-modal": "^3.16.1",
     "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
-    "sass": "^1.58.3",
-    "scss": "^0.2.4",
     "styled-components": "^5.3.8",
-    "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -41,10 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev:build": "react-scripts build",
-    "dev:deploy": "aws s3 sync ./build s3://portfolio-s3-ap-north-east-2 --profile=portfolio-s3",
-    "dev:invalidate": "aws cloudfront create-invalidation --profile=portfolio-s3 --distribution-id E1R13ZFSRYR190 --paths /*",
-    "deploy-all": "run-s dev:**"
+    "dev:build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -68,7 +53,8 @@
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.2",
-    "npm-run-all": "^4.1.5",
+    "eslint-config-react-app": "^7.0.1",
+    "typescript": "^5.3.3",
     "video.js": "^8.0.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
