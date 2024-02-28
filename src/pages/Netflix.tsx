@@ -7,29 +7,22 @@ import NetflixHeader from "../components/netflix/NetflixHeader";
 import NetflixFooter from "../components/netflix/NetflixFooter";
 import { SuspenseComponent } from "../components/common/SuspenseComponent";
 
-
 const NetflixHomeContainer = styled.main`
-    height: 100vh;
+  height: 100vh;
 `;
 const Netflix = () => {
-  const currentUser =
-    useSelector(state => state.userSlice.currentUser);
+  const currentUser = useSelector((state) => state.userSlice.currentUser);
   return (
     <NetflixHomeContainer>
-      {
-        currentUser ?
-          (
-            <SuspenseComponent>
-              <NetflixHeader />
-              <NetflixBody />
-              <NetflixFooter />
-            </SuspenseComponent>
-
-          ) : (
-            <UserListComponent />
-          )
-      }
-
+      {currentUser ? (
+        <SuspenseComponent>
+          <NetflixHeader />
+          <NetflixBody />
+          <NetflixFooter />
+        </SuspenseComponent>
+      ) : (
+        <UserListComponent />
+      )}
     </NetflixHomeContainer>
   );
 };

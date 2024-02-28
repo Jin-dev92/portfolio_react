@@ -6,4 +6,4 @@ export const Navigation = styled.nav`
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-`
+`;

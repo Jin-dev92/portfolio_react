@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {UserComponent} from "./UserComponent";
+import { UserComponent } from "./UserComponent";
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,26 +33,30 @@ const Wrapper = styled.div`
   & ul {
     list-style: none;
   }
-
-
-`
+`;
 const userList = [
-    {
-        id:1,
-        name: '김의진',
-        src: process.env.PUBLIC_URL.concat('/images/icons/profile/default_user_blue.png')
-    },
-    {
-        id:2,
-        name: '유재석',
-        src: process.env.PUBLIC_URL.concat('/images/icons/profile/default_user_yellow.png')
-    },
-    {
-        id:3,
-        name: '송강호',
-        src: process.env.PUBLIC_URL.concat('/images/icons/profile/default_user_red.png')
-    },
-]
+  {
+    id: 1,
+    name: "김의진",
+    src: process.env.PUBLIC_URL.concat(
+      "/images/icons/profile/default_user_blue.png",
+    ),
+  },
+  {
+    id: 2,
+    name: "유재석",
+    src: process.env.PUBLIC_URL.concat(
+      "/images/icons/profile/default_user_yellow.png",
+    ),
+  },
+  {
+    id: 3,
+    name: "송강호",
+    src: process.env.PUBLIC_URL.concat(
+      "/images/icons/profile/default_user_red.png",
+    ),
+  },
+];
 
 // const addProfile = {
 //     name: "프로필 추가",
@@ -60,26 +64,24 @@ const userList = [
 // }
 
 export const UserListComponent = () => {
-    return (
-        <Wrapper>
-            <h4>해당 앱은 미완성 상태이며, 지속적으로 업데이트 중입니다.</h4>
-            <h1>넷플릭스를 시청할 프로필을 선택하세요.</h1>
-            <ul>
-                {
-                    userList.reduce((acc, currentUser, index) => {
-                        acc.push(
-                            <li key={'user_profile_' + index}>
-                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                <a href={null}>
-                                    <UserComponent user={currentUser}/>
-                                </a>
-                            </li>
-                        )
-                        return acc
-                    }, [])
-                }
-                {/*<li><UserComponent user={addProfile}/></li>*/}
-            </ul>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <h4>해당 앱은 미완성 상태이며, 지속적으로 업데이트 중입니다.</h4>
+      <h1>넷플릭스를 시청할 프로필을 선택하세요.</h1>
+      <ul>
+        {userList.reduce((acc, currentUser, index) => {
+          acc.push(
+            <li key={"user_profile_" + index}>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a href={null}>
+                <UserComponent user={currentUser} />
+              </a>
+            </li>,
+          );
+          return acc;
+        }, [])}
+        {/*<li><UserComponent user={addProfile}/></li>*/}
+      </ul>
+    </Wrapper>
+  );
+};

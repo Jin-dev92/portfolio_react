@@ -1,4 +1,4 @@
 export const DataType = {
-    JSON: 'JSON',
-    XML: 'XML',
-}
+  JSON: "JSON",
+  XML: "XML",
+};

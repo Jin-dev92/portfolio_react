@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ImageComponent = styled.div`
-  background-image: url(${props => props?.src});
+  background-image: url(${(props) => props?.src});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -11,4 +11,4 @@ export const ImageComponent = styled.div`
   position: relative;
   max-width: 200px;
   max-height: 200px;
-`
+`;

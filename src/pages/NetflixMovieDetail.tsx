@@ -1,6 +1,5 @@
 const NetflixMovieDetail = () => {
-    // const {id} = useParams()
+  // const {id} = useParams()
+};
 
-}
-
-export default NetflixMovieDetail
+export default NetflixMovieDetail;
