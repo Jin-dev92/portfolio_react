@@ -210,3 +210,4 @@ dist
 
 config/
 portfolio.iml
+.env.*
