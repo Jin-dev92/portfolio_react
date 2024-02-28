@@ -1,16 +1,7 @@
 import React from "react";
 import NumberItem from "./NumberItem";
-import styled from "styled-components";
+import * as Style from "./style/NumberPuzzle.style";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 20vw;
-  height: 20vw;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  cursor: pointer;
-`;
 const NumberPuzzle = () => {
   const [numberState, setNumberState] = React.useState(() => {
     let ar = [1, 2, 3, 4, 5, 6, 7, 8, null];
@@ -19,7 +10,7 @@ const NumberPuzzle = () => {
   });
   const [count, setCount] = React.useState(0);
   return (
-    <Wrapper>
+    <Style.Wrapper>
       {numberState.map((numberRow) => {
         return numberRow.map((number, idx) => (
           <NumberItem
@@ -32,7 +23,7 @@ const NumberPuzzle = () => {
           />
         ));
       })}
-    </Wrapper>
+    </Style.Wrapper>
   );
 };
 

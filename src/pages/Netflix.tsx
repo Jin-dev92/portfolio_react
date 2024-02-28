@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { UserListComponent } from "../components/netflix/components/UserListComponent";
 import { useSelector } from "react-redux";
 import NetflixBody from "../components/netflix/NetflixBody";
 import NetflixHeader from "../components/netflix/NetflixHeader";
 import NetflixFooter from "../components/netflix/NetflixFooter";
 import { SuspenseComponent } from "../components/common/SuspenseComponent";
+import styled from "styled-components";
 
 const NetflixHomeContainer = styled.main`
   height: 100vh;

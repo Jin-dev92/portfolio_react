@@ -1,18 +1,6 @@
-import styled from "styled-components";
+import * as Style from "./style/NumberItem.style";
+import React from "react";
 
-const NumberWrapper = styled.div`
-  width: 6vw;
-  height: 6vw;
-  line-height: 6vw;
-  background-color: ${(props) => (props.children ? "orange" : "transparent")};
-  margin: 0 auto;
-  text-align: center;
-  font-size: 2vw;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  box-shadow: ${(props) =>
-    props.children ? "10px 10px 5px 0 rgba(0,0,0,0.75)" : undefined};
-`;
 const NumberItem = ({
   number,
   numberState,
@@ -75,7 +63,9 @@ const NumberItem = ({
     return nullIdx ? [idx, nullIdx] : false; // 클릭한 블록의 상하좌우에 빈칸(null)이 있는 경우에 해당 좌표를 리턴, 없는 경우 false 반환
   };
 
-  return <NumberWrapper onClick={clickHandler}>{number}</NumberWrapper>;
+  return (
+    <Style.NumberWrapper onClick={clickHandler}>{number}</Style.NumberWrapper>
+  );
 };
 
 export default NumberItem;
