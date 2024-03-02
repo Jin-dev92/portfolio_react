@@ -9,7 +9,7 @@ import {
   WeatherCategory,
   WindCategory,
 } from "./card/constant/weatherCategory";
-import { DataType } from "./card/constant/dataType";
+import { DataTypeEnum } from "./card/constant/dataType.ts";
 
 const DataChart = () => {
   const releaseTime = [
@@ -34,7 +34,7 @@ const DataChart = () => {
   const config = {
     params: {
       pageNo: 1,
-      dataType: DataType.JSON,
+      dataType: DataTypeEnum.JSON,
       numOfRows: Object.keys(
         Object.assign(WeatherCategory, WindCategory, PrecipitationCategory),
       ).length,

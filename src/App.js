@@ -14,11 +14,10 @@ const MainContainer = styled(FlexContainer)`
 
 function App() {
   const [open, setOpen] = React.useState(false);
-  const contents = React.useRef(<></>);
+  const contents = React.useRef(null);
   const setContents = (value) => {
     contents.current = value;
   };
-  // console.log(GLOBAL_CONFIG.)
   return (
     <MainContainer>
       {appData.app_list.map((data, idx) => {

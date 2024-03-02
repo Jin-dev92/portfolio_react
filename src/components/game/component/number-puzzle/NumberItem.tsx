@@ -1,19 +1,26 @@
 import * as Style from "./style/NumberItem.style";
 import React from "react";
 
-const NumberItem = ({
-  number,
-  numberState,
-  setNumberState,
-  setCount,
-  count,
-}) => {
+interface INumberItemProps {
+  number: number | null;
+  numberState: (number | null)[][];
+  setNumberState: React.Dispatch<React.SetStateAction<(number | null)[][]>>;
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export const NumberItem = (props: INumberItemProps) => {
+  const { number, numberState, setNumberState, setCount, count } = props;
   const puzzleSize = 3;
   const dx = [1, 0, -1, 0];
   const dy = [0, 1, 0, -1];
-  const clickHandler = (event) => {
-    const { innerHTML } = event.target;
-    if (innerHTML === "") return;
+  const clickHandler = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    console.log(event);
+    // const innerHTML = event.target;
+    const innerHTML = "1"; //@todo event 확인 후 , 수정해야됨. 현재 해당 함수 동작안함.ㅁ
+    // if (innerHTML === "") return;
     const blockInfo = canMoveBlock(parseInt(innerHTML));
     if (blockInfo) {
       moveBlock(blockInfo[0], blockInfo[1]);
@@ -22,8 +29,11 @@ const NumberItem = ({
       console.log("움직일 수 없습니다.");
     }
   };
-  const moveBlock = (idx, nullIdx) => {
+  const moveBlock = (idx: number[], nullIdx: number[]) => {
     // 블록 움직이는 함수
+    if (!idx || !nullIdx) {
+      return;
+    }
     setNumberState((state) => {
       const copy = state[nullIdx[0]][nullIdx[1]];
       state[nullIdx[0]][nullIdx[1]] = state[idx[0]][idx[1]];
@@ -37,9 +47,9 @@ const NumberItem = ({
       return prevCount + 1;
     });
   };
-  const canMoveBlock = (number) => {
+  const canMoveBlock = (number: number) => {
     // 블록을 움직일 수 있는지 확인하는 함수
-    let idx;
+    let idx: number[] = [];
     let nullIdx;
     for (let i = 0; i < numberState.length; i++) {
       const arr = numberState[i];
@@ -67,5 +77,3 @@ const NumberItem = ({
     <Style.NumberWrapper onClick={clickHandler}>{number}</Style.NumberWrapper>
   );
 };
-
-export default NumberItem;

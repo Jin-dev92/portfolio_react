@@ -3,7 +3,14 @@ import { Modal } from "antd";
 import ModalHeader from "./header/ModalHeader";
 import Draggable from "react-draggable";
 
-const CommonModal = ({ contents, open, setOpen }) => {
+interface ICommonModalProps {
+  contents: any;
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const CommonModal = (props: ICommonModalProps) => {
+  const { contents, open, setOpen } = props;
   const { title, component } = contents.current;
   const handleCancel = () => {
     setOpen(false);

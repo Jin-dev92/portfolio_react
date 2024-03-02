@@ -1,12 +1,6 @@
-import { APIService } from "./APIService";
 import GLOBAL_CONFIG from "../config";
+import APIService from "./APIService";
 
-export const MovieAPI = new APIService({
-  baseURL: "https://www.kobis.or.kr/kobisopenapi/webservice/rest",
-  params: {
-    key: GLOBAL_CONFIG.REACT_APP_MOVIE_SERVICE_KEY,
-  },
-});
 export const WeatherAPI = new APIService({
   baseURL: "https://apis.data.go.kr",
   params: {
@@ -36,10 +30,6 @@ export const getCurrentWeather = (config) =>
 /*
  *  Movie API 목록
  * */
-export const getBoxOfficeList = (config) =>
-  MovieAPI.get("/boxoffice/searchDailyBoxOfficeList.json", config);
-export const getMovieDetailById = (config) =>
-  MovieAPI.get("/movie/searchMovieInfo.json", config);
 
 export const getSearchMovieByQuery = (config) =>
   THEMovieDBAPI.get(`/search/movie`, config);

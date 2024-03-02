@@ -1,13 +1,20 @@
 import React from "react";
-import NumberItem from "./NumberItem";
 import * as Style from "./style/NumberPuzzle.style";
+import { NumberItem } from "./NumberItem.tsx";
 
-const NumberPuzzle = () => {
-  const [numberState, setNumberState] = React.useState(() => {
-    let ar = [1, 2, 3, 4, 5, 6, 7, 8, null];
-    ar.sort(() => Math.random() - 0.5);
-    return [ar.slice(0, 3), ar.slice(3, 6), ar.slice(6, 9)];
-  });
+export const NumberPuzzle = () => {
+  const randomNumberArr = [1, 2, 3, 4, 5, 6, 7, 8, null].sort(
+    () => Math.random() - 0.5,
+  );
+  const initNumberArr = [
+    randomNumberArr.slice(0, 3),
+    randomNumberArr.slice(3, 6),
+    randomNumberArr.slice(6, 9),
+  ];
+
+  const [numberState, setNumberState] =
+    React.useState<(number | null)[][]>(initNumberArr);
+
   const [count, setCount] = React.useState(0);
   return (
     <Style.Wrapper>
@@ -26,5 +33,3 @@ const NumberPuzzle = () => {
     </Style.Wrapper>
   );
 };
-
-export default NumberPuzzle;
