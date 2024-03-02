@@ -18,7 +18,7 @@ function App() {
   const setContents = (value) => {
     contents.current = value;
   };
-  // console.log(process.env)
+  // console.log(GLOBAL_CONFIG.)
   return (
     <MainContainer>
       {appData.app_list.map((data, idx) => {

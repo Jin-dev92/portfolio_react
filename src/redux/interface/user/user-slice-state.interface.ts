@@ -1,4 +1,4 @@
-import { UserModel } from "../../../type/model/user.model";
+import { UserModel } from "../../../model/user.model";
 
 export interface IUserSliceState {
   userList: UserModel[];

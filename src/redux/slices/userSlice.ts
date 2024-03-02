@@ -1,23 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUserSliceState } from "../interface/user/user-slice-state.interface";
-import { IUserSliceCaseReducers } from "../interface/user/reducer/user-slice-case-reducers.interface";
+import { UserModel } from "../../model/user.model.ts";
 
 const initialState: IUserSliceState = {
   userList: [],
   currentUser: null,
 };
-export const userSlice = createSlice<IUserSliceState, IUserSliceCaseReducers>({
+export const userSlice = createSlice({
   name: SLICE_IDENTIFIER.USER_SLICE.toString(),
   initialState,
   reducers: {
-    setUserList: (state, action) => {
+    setUserList: (state, action: PayloadAction<{ userList: UserModel[] }>) => {
       state.userList = action.payload.userList;
-      return state;
     },
-    setCurrentUser: (state, action) => {
+    setCurrentUser: (
+      state,
+      action: PayloadAction<{ currentUser: UserModel }>,
+    ) => {
       state.currentUser = action.payload.currentUser;
-      return state;
     },
   },
 });
-export const { setUserList, setCurrentUser } = userSlice.actions;
+export const userSliceActions = userSlice.actions;

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { UserComponent } from "./UserComponent";
+import GLOBAL_CONFIG from "../../../config";
+import React from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,6 +26,7 @@ const Wrapper = styled.div`
       & .profile_name {
         color: white;
       }
+
       & .profile_image {
         border: 1.5px solid white;
       }
@@ -38,21 +41,21 @@ const userList = [
   {
     id: 1,
     name: "김의진",
-    src: process.env.PUBLIC_URL.concat(
+    src: GLOBAL_CONFIG.PUBLIC_URL.concat(
       "/images/icons/profile/default_user_blue.png",
     ),
   },
   {
     id: 2,
     name: "유재석",
-    src: process.env.PUBLIC_URL.concat(
+    src: GLOBAL_CONFIG.PUBLIC_URL.concat(
       "/images/icons/profile/default_user_yellow.png",
     ),
   },
   {
     id: 3,
     name: "송강호",
-    src: process.env.PUBLIC_URL.concat(
+    src: GLOBAL_CONFIG.PUBLIC_URL.concat(
       "/images/icons/profile/default_user_red.png",
     ),
   },
@@ -60,7 +63,7 @@ const userList = [
 
 // const addProfile = {
 //     name: "프로필 추가",
-//     src: process.env.PUBLIC_URL.concat('/images/icons/profile/plus.png')
+//     src: GLOBAL_CONFIG.PUBLIC_URL.concat('/images/icons/profile/plus.png')
 // }
 
 export const UserListComponent = () => {
@@ -72,7 +75,6 @@ export const UserListComponent = () => {
         {userList.reduce((acc, currentUser, index) => {
           acc.push(
             <li key={"user_profile_" + index}>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href={null}>
                 <UserComponent user={currentUser} />
               </a>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import GLOBAL_CONFIG from "../../../config";
 
 const defaultSize = 300;
 const Wrapper = styled.div`
@@ -12,7 +13,7 @@ const ImageWrapper = styled.div``;
 export const MovieCardComponent = ({ data }) => {
   const { backdrop_path } = data;
   const rootURL = [
-    process.env.REACT_APP_MOVIE_DB_IMAGE_ROOT,
+    GLOBAL_CONFIG.REACT_APP_MOVIE_DB_IMAGE_ROOT,
     `w${defaultSize}`,
     backdrop_path,
   ].join("/");

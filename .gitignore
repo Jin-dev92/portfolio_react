@@ -207,7 +207,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-config/
+
 portfolio.iml
 .env
 .env.*

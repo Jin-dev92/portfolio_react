@@ -1,15 +1,16 @@
 import { APIService } from "./APIService";
+import GLOBAL_CONFIG from "../config";
 
 export const MovieAPI = new APIService({
   baseURL: "https://www.kobis.or.kr/kobisopenapi/webservice/rest",
   params: {
-    key: process.env.REACT_APP_MOVIE_SERVICE_KEY,
+    key: GLOBAL_CONFIG.REACT_APP_MOVIE_SERVICE_KEY,
   },
 });
 export const WeatherAPI = new APIService({
   baseURL: "https://apis.data.go.kr",
   params: {
-    serviceKey: process.env.REACT_APP_SERVICE_KEY,
+    serviceKey: GLOBAL_CONFIG.REACT_APP_SERVICE_KEY,
   },
 });
 
@@ -18,7 +19,7 @@ export const THEMovieDBAPI = new APIService({
   baseURL: "https://api.themoviedb.org/3",
   headers: {
     Authorization: "Bearer ".concat(
-      process.env.REACT_APP_MOVIE_DB_API_ACCESS_TOKEN,
+      GLOBAL_CONFIG.REACT_APP_MOVIE_DB_API_ACCESS_TOKEN,
     ),
   },
   params: {
